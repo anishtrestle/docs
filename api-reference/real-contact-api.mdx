@@ -20,47 +20,45 @@ GET https://api.trestleiq.com/1.0/real_contact?name={name}&phone={phone}&email={
 
 ## Parameters
 
-<ParamField body="query" path="name" type="string" required>
+<ParamField path="name" body="query" type="string" required>
   The name of the person to search. **Example:** `John Doe`
 </ParamField>
 
-<ParamField body="query" path="phone" type="string" required>
+<ParamField path="phone" body="query" type="string" required>
   The phone provided by the lead on the web form. **Example:** `4259853735`
 </ParamField>
 
-<ParamField body="query" path="email" type="string">
-  The email provided by the lead on the web form. **Example:**
-  `john.doe@example.com`
+<ParamField path="email" body="query" type="string">
+  The email provided by the lead on the web form. **Example:** `john.doe@example.com`
 </ParamField>
 
-<ParamField body="query" path="ip_address" type="string">
-  The IP address from which the lead signed up on the web form. **Example:**
-  `192.0.0.1`
+<ParamField path="ip_address" body="query" type="string">
+  The IP address from which the lead signed up on the web form. **Example:** `192.0.0.1`
 </ParamField>
 
-<ParamField body="query" path="address.street_line_1" type="string">
+<ParamField path="address.street_line_1" body="query" type="string">
   The first line of the street part in the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.city" type="string">
+<ParamField path="address.city" body="query" type="string">
   The name of the city in the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.state_code" type="string">
+<ParamField path="address.state_code" body="query" type="string">
   The state code of the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.postal_code" type="string">
+<ParamField path="address.postal_code" body="query" type="string">
   The postal code of the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.country_code" type="string">
+<ParamField path="address.country_code" body="query" type="string">
   The ISO-3166 alpha-2 country code of the address.
 </ParamField>
 
 ## Headers
 
-<ParamField body="header" path="x-api-key" type="string" required>
+<ParamField path="x-api-key" body="header" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -73,6 +71,7 @@ curl --request GET \
   --url "https://api.trestleiq.com/1.0/real_contact?name=John%20Doe&phone=4259853735&email=john.doe@example.com" \
   --header "x-api-key: YOUR_API_KEY"
 ```
+
 
 ```javascript JavaScript
 const response = await fetch(
@@ -95,8 +94,7 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="phone.activity_score" type="integer">
-  Trestle's activity scores range from 0 to 100. A score of 70 or above means
-  high confidence the phone is connected and active.
+  Trestle's activity scores range from 0 to 100. A score of 70 or above means high confidence the phone is connected and active.
 </ResponseField>
 
 <ResponseField name="phone.line_type" type="string">
@@ -104,8 +102,7 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="person.match_score" type="integer">
-  The match score indicating how well the provided information matches Trestle's
-  database.
+  The match score indicating how well the provided information matches Trestle's database.
 </ResponseField>
 
 <ResponseField name="person.contactability_grade" type="string">
