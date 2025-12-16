@@ -8,23 +8,26 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+
   "navigation": {
-     "versions": [
+    "versions": [
       {
         "version": "Current",
-        "openapi": "docs/api/current.yaml",
+        "openapi": "api/current.yaml",
         "default": true
       },
       {
         "version": "Archived",
-        "openapi": "docsapi/archived.yaml"
+        "openapi": "api/archived.yaml"
       }
     ]
   },
+
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
+
   "navbar": {
     "links": [
       {
@@ -38,18 +41,20 @@
       "href": "https://dashboard.mintlify.com"
     }
   },
+
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
+
   "footer": {
     "socials": {
       "x": "https://x.com/mintlify",
