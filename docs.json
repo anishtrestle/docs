@@ -9,8 +9,12 @@
     "dark": "#1E3F51"
   },
   "appearance": {
-    "default": "light",
+    "default": "dark",
     "strict": true
+  },
+  "settings": {
+    "customScripts": ["/style.css"],
+    "customStyles": ["/style.css"]
   },
   "navigation": {
     "versions": [
