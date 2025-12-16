@@ -9,7 +9,7 @@
     "dark": "#1E3F51"
   },
   "appearance": {
-    "default": "light",
+    "default": "dark",
     "strict": true
   },
   "navigation": {
