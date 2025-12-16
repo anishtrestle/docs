@@ -12,12 +12,12 @@
      "versions": [
       {
         "version": "Current",
-        "openapi": "api/current.yaml",
+        "openapi": "docs/api/current.yaml",
         "default": true
       },
       {
         "version": "Archived",
-        "openapi": "api/archived.yaml"
+        "openapi": "docsapi/archived.yaml"
       }
     ]
   },
