@@ -1,58 +1,41 @@
-openapi: 3.0.3
+openapi: 3.0.1
 info:
   title: Trestle API Documentation
   version: 1.0.0
-  description: |
-
-    # Overview
-    Trestle provides identity data for businesses. This identity data is key for building and maintaining great customer relationships.
-
-    ### _Base URL_
-
-    https://api.trestleiq.com/ - US West (Default)
-
-    ### _Authentication_
-
-    Trestle controls access to the API and data via an API Key. The API key is the primary data
-    authentication method for your account. Your usage is recorded and reported via the API
-    Key. You may use a single API key for multiple Trestle APIs.
-
-    # FAQ
-    ### _How do I get an API Key?_
-
-    - [Sign up for a Developer Portal account](https://portal.trestleiq.com/signup). Once approved, you can send a request to any of Trestle's APIs. Here's a brief overview of Trestle's APIs:
-
-    - [Reverse Phone API](https://trestleiq.com/reverse-phone-api/): To find the current resident or business associated with the phone and their information, including demographic data, address, associated people and more.
-
-    - [Caller Identification API](https://trestleiq.com/caller-identification-api/): To find the single owner and location of the person or business calling in.
-
-    - [Smart CNAM API](https://trestleiq.com/smart-cnam-api/): Validates a phone number and provides person or business name associated to the phone.
-
-    - [Phone Validation API](https://trestleiq.com/phone-validation-api/): Lightweight phone check to identify line type, carrier, validity, and more.
-
-    - [Reverse Address API](https://trestleiq.com/reverse-address-api/): To find the current resident or business associated with the address and their information, including demographic data, phones, associated people and more.
-
-    - [Find Person API](https://trestleiq.com/find-person-api/): To find a person’s details, including demographics, all current and historical addresses, and phone numbers.
-
-    - [Real Contact API](https://trestleiq.com/real-contact-api/): Validates whether a lead is real, confirms the person is who he/she says they are, and grades the contactability of the lead.
-
-    ### Do you have a Postman Collection?
-
-    Yes, we do, it can be found <a href="https://www.postman.com/trestleiq/workspace/trestle-identity-data-apis" target="_blank">here</a>.
-    You will need to fork the collection to use it and also an API Key, for which you can [sign up here](https://dev-portal.trestleiq.com/accounts/create).
-
-    ### _Where can I check the status of the service?_
-
-    You can find the API status at the <a href="https://status.trestleiq.com/" target="_blank">Trestle Status Page</a>.
-
-    ### _Can I submit a request using POST method?_
-
-    We recommend using GET for simplicity.
-    POST is also supported, in this case `api_key` must be in the request body and not part of the URL.
-
-    ### _I have more questions, who can I contact?_
-
-    Please email us at support@trestleiq.com
+  description: "\n# Overview\nTrestle provides identity data for businesses. This\
+    \ identity data is key for building and maintaining great customer relationships.\n\
+    \n### _Base URL_\n\nhttps://api.trestleiq.com/ - US West (Default)\n\n### _Authentication_\n\
+    \nTrestle controls access to the API and data via an API Key. The API key is the\
+    \ primary data\nauthentication method for your account. Your usage is recorded\
+    \ and reported via the API\nKey. You may use a single API key for multiple Trestle\
+    \ APIs.\n\n# FAQ\n### _How do I get an API Key?_\n\n- [Sign up for a Developer\
+    \ Portal account](https://portal.trestleiq.com/signup). Once approved, you can\
+    \ send a request to any of Trestle's APIs. Here's a brief overview of Trestle's\
+    \ APIs:\n\n- [Reverse Phone API](https://trestleiq.com/reverse-phone-api/): To\
+    \ find the current resident or business associated with the phone and their information,\
+    \ including demographic data, address, associated people and more.\n\n- [Caller\
+    \ Identification API](https://trestleiq.com/caller-identification-api/): To find\
+    \ the single owner and location of the person or business calling in.\n\n- [Smart\
+    \ CNAM API](https://trestleiq.com/smart-cnam-api/): Validates a phone number and\
+    \ provides person or business name associated to the phone.\n\n- [Phone Validation\
+    \ API](https://trestleiq.com/phone-validation-api/): Lightweight phone check to\
+    \ identify line type, carrier, validity, and more.\n\n- [Reverse Address API](https://trestleiq.com/reverse-address-api/):\
+    \ To find the current resident or business associated with the address and their\
+    \ information, including demographic data, phones, associated people and more.\n\
+    \n- [Find Person API](https://trestleiq.com/find-person-api/): To find a person\u2019\
+    s details, including demographics, all current and historical addresses, and phone\
+    \ numbers.\n\n- [Real Contact API](https://trestleiq.com/real-contact-api/): Validates\
+    \ whether a lead is real, confirms the person is who he/she says they are, and\
+    \ grades the contactability of the lead.\n\n### Do you have a Postman Collection?\n\
+    \nYes, we do, it can be found <a href=\"https://www.postman.com/trestleiq/workspace/trestle-identity-data-apis\"\
+    \ target=\"_blank\">here</a>.\nYou will need to fork the collection to use it\
+    \ and also an API Key, for which you can [sign up here](https://dev-portal.trestleiq.com/accounts/create).\n\
+    \n### _Where can I check the status of the service?_\n\nYou can find the API status\
+    \ at the <a href=\"https://status.trestleiq.com/\" target=\"_blank\">Trestle Status\
+    \ Page</a>.\n\n### _Can I submit a request using POST method?_\n\nWe recommend\
+    \ using GET for simplicity.\nPOST is also supported, in this case `api_key` must\
+    \ be in the request body and not part of the URL.\n\n### _I have more questions,\
+    \ who can I contact?_\n\nPlease email us at support@trestleiq.com\n"
   termsOfService: https://trestleiq.com/terms-of-service
   contact:
     name: Trestle Support
@@ -63,50 +46,71 @@ info:
     altText: Trestle Logo
     href: https://trestleiq.com
 servers:
-  - url: https://api.trestleiq.com
+- url: https://api.trestleiq.com
 security:
-  []
+- ApiKeyAuth: []
 tags:
-  - name: Reverse Phone API
-    description: |
-      Reverse Phone API validates a phone number and provides phone metadata, owner name and demographics, current and historical addresses, relatives and associated people, and additional phone numbers.
-  - name: Caller Identification API
-    description: The Caller Identification API provides an incoming caller's identity, including phone metadata (carrier, line type, prepaid status, etc.), name, demographics, and current address.
-  - name: Smart CNAM API
-    description: Validates a phone number and provides person or business name associated to the phone.
-  - name: Phone Validation API
-    description: |
-      Trestle Phone Validation API validates the phone number and provides phone metadata, such as carrier name, line type (landline, mobile, non-fixed VoIP, etc.), is the phone prepaid, etc.
-  - name: Reverse Address API
-    description: |
-      Reverse Address API validates and normalizes the input address and provides the current residents at the address with their information, including demographics, historical addresses, relatives and associated people and phone numbers.
-  - name: Find Person API
-    description: |
-      Find Person API provides the person's details, including demographics, all current and historical addresses, phone numbers, and relatives and associates to this person.
-  - name: Real Contact API
-    description: |
-      Real Contact API validates whether a lead is real, confirms the person is who he/she says they are, and grades the contactability of the lead.
+- name: Reverse Phone API
+  description: 'Reverse Phone API validates a phone number and provides phone metadata,
+    owner name and demographics, current and historical addresses, relatives and associated
+    people, and additional phone numbers.
+
+    '
+- name: Caller Identification API
+  description: The Caller Identification API provides an incoming caller's identity,
+    including phone metadata (carrier, line type, prepaid status, etc.), name, demographics,
+    and current address.
+- name: Smart CNAM API
+  description: Validates a phone number and provides person or business name associated
+    to the phone.
+- name: Phone Validation API
+  description: 'Trestle Phone Validation API validates the phone number and provides
+    phone metadata, such as carrier name, line type (landline, mobile, non-fixed VoIP,
+    etc.), is the phone prepaid, etc.
+
+    '
+- name: Reverse Address API
+  description: 'Reverse Address API validates and normalizes the input address and
+    provides the current residents at the address with their information, including
+    demographics, historical addresses, relatives and associated people and phone
+    numbers.
+
+    '
+- name: Find Person API
+  description: 'Find Person API provides the person''s details, including demographics,
+    all current and historical addresses, phone numbers, and relatives and associates
+    to this person.
+
+    '
+- name: Real Contact API
+  description: 'Real Contact API validates whether a lead is real, confirms the person
+    is who he/she says they are, and grades the contactability of the lead.
+
+    '
 paths:
   /3.1/phone:
     get:
       tags:
-        - Reverse Phone API
+      - Reverse Phone API
       summary: Reverse Phone API 3.1
       operationId: getPhone
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.1/phone?phone=<span style='color: #408FB1'>[insert_phone_number]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.1/phone?phone=<span style=''color: #408FB1''>[insert_phone_number]</span>
+        </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: phone
-          $ref: '#/components/parameters/phone'
-          example: '2069735100'
-        - name: phone.country_hint
-          $ref: '#/components/parameters/countryHint'
-        - name: phone.name_hint
-          $ref: '#/components/parameters/nameHint'
-        - name: phone.postal_code_hint
-          $ref: '#/components/parameters/postalCodeHint'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: phone
+        $ref: '#/components/parameters/phone'
+        example: '2069735100'
+      - name: phone.country_hint
+        $ref: '#/components/parameters/countryHint'
+      - name: phone.name_hint
+        $ref: '#/components/parameters/nameHint'
+      - name: phone.postal_code_hint
+        $ref: '#/components/parameters/postalCodeHint'
       responses:
         '200':
           description: Successful reverse phone response.
@@ -136,31 +140,30 @@ paths:
                     example: '1'
                   line_type:
                     type: string
-                    description: |-
-                      The line type of the phone number.
-
-                      * `Landline` - Traditional wired phone line.
-                      * `Mobile` - Wireless phone line.
-                      * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                      * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                      * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                      * `TollFree` - Callee pays for call.
-                      * `Voicemail` - Voicemail-only service.
-                      * `Other` - Line type is unclear or does not match current categories.
+                    description: "The line type of the phone number.\n\n* `Landline`\
+                      \ - Traditional wired phone line.\n* `Mobile` - Wireless phone\
+                      \ line.\n* `FixedVOIP` - VOIP number connected to a physical\
+                      \ address, such as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP\
+                      \ number unconnected to a fixed physical address, such as Google\
+                      \ Voice or Skype.\n* `Premium` - Caller pays a premium for the\
+                      \ call\u2013e.g. 976 area code.\n* `TollFree` - Callee pays\
+                      \ for call.\n* `Voicemail` - Voicemail-only service.\n* `Other`\
+                      \ - Line type is unclear or does not match current categories."
                     nullable: true
                     example: NonFixedVOIP
                     enum:
-                      - Landline
-                      - Premium
-                      - NonFixedVOIP
-                      - Mobile
-                      - FixedVOIP
-                      - TollFree
-                      - Other
-                      - Voicemail
+                    - Landline
+                    - Premium
+                    - NonFixedVOIP
+                    - Mobile
+                    - FixedVOIP
+                    - TollFree
+                    - Other
+                    - Voicemail
                   carrier:
                     type: string
-                    description: The company that provides voice and/or data services for the phone number. Carriers are returned at the MVNO level.
+                    description: The company that provides voice and/or data services
+                      for the phone number. Carriers are returned at the MVNO level.
                     nullable: true
                     example: Trestle Telco
                   is_prepaid:
@@ -178,11 +181,12 @@ paths:
                     description: The primary owner of the phone number.
                     nullable: true
                     oneOf:
-                      - $ref: '#/components/schemas/PhoneOwnerPerson'
-                      - $ref: '#/components/schemas/PhoneOwnerBusiness'
+                    - $ref: '#/components/schemas/PhoneOwnerPerson'
+                    - $ref: '#/components/schemas/PhoneOwnerBusiness'
                   current_addresses:
                     type: array
-                    description: A list of unique current locations associated with Person or Business in belongs_to array.
+                    description: A list of unique current locations associated with
+                      Person or Business in belongs_to array.
                     items:
                       type: object
                       properties:
@@ -197,21 +201,23 @@ paths:
                           description: The type of the location.
                           nullable: true
                           enum:
-                            - Address
-                            - Neighborhood
-                            - Country
-                            - ZipPlus4
-                            - PostalCode
-                            - City
-                            - State
+                          - Address
+                          - Neighborhood
+                          - Country
+                          - ZipPlus4
+                          - PostalCode
+                          - City
+                          - State
                         street_line_1:
                           type: string
-                          description: The first line of the _street_ part in the structured address.
+                          description: The first line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: 100 Syrws St
                         street_line_2:
                           type: string
-                          description: The second line of the _street_ part in the structured address.
+                          description: The second line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: Ste 1
                         city:
@@ -237,7 +243,8 @@ paths:
                           example: WA
                         country_code:
                           type: string
-                          description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                          description: 'The ISO-3166 alpha-2 country code of the address.
+                            See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                           format: ISO-3166-2
                           nullable: true
                           example: US
@@ -259,26 +266,30 @@ paths:
                               description: The accuracy of the geographical location.
                               nullable: true
                               enum:
-                                - Neighborhood
-                                - Country
-                                - PostalCode
-                                - Street
-                                - City
-                                - State
-                                - RoofTop
-                          description: The coordinates of the geographical location of the address.
+                              - Neighborhood
+                              - Country
+                              - PostalCode
+                              - Street
+                              - City
+                              - State
+                              - RoofTop
+                          description: The coordinates of the geographical location
+                            of the address.
                         is_active:
                           type: boolean
-                          description: True if the address is currently receiving mail.
+                          description: True if the address is currently receiving
+                            mail.
                           nullable: true
                         delivery_point:
                           $ref: '#/components/schemas/DeliveryPoint'
                         link_to_person_start_date:
                           $ref: '#/components/schemas/LinkToPersonStartDate'
-                      description: One of the addresses currently associated to the person.
+                      description: One of the addresses currently associated to the
+                        person.
                   historical_addresses:
                     type: array
-                    description: Returns a list of unique historical locations associated with the phone.
+                    description: Returns a list of unique historical locations associated
+                      with the phone.
                     items:
                       type: object
                       properties:
@@ -293,21 +304,23 @@ paths:
                           description: The type of the location.
                           nullable: true
                           enum:
-                            - Address
-                            - Neighborhood
-                            - Country
-                            - ZipPlus4
-                            - PostalCode
-                            - City
-                            - State
+                          - Address
+                          - Neighborhood
+                          - Country
+                          - ZipPlus4
+                          - PostalCode
+                          - City
+                          - State
                         street_line_1:
                           type: string
-                          description: The first line of the _street_ part in the structured address.
+                          description: The first line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: 100 Syrws St
                         street_line_2:
                           type: string
-                          description: The second line of the _street_ part in the structured address.
+                          description: The second line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: Ste 1
                         city:
@@ -333,7 +346,8 @@ paths:
                           example: WA
                         country_code:
                           type: string
-                          description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                          description: 'The ISO-3166 alpha-2 country code of the address.
+                            See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                           format: ISO-3166-2
                           nullable: true
                           example: US
@@ -355,17 +369,19 @@ paths:
                               description: The accuracy of the geographical location.
                               nullable: true
                               enum:
-                                - Neighborhood
-                                - Country
-                                - PostalCode
-                                - Street
-                                - City
-                                - State
-                                - RoofTop
-                          description: The coordinates of the geographical location of the address.
+                              - Neighborhood
+                              - Country
+                              - PostalCode
+                              - Street
+                              - City
+                              - State
+                              - RoofTop
+                          description: The coordinates of the geographical location
+                            of the address.
                         is_active:
                           type: boolean
-                          description: True if the address is currently receiving mail.
+                          description: True if the address is currently receiving
+                            mail.
                           nullable: true
                         delivery_point:
                           $ref: '#/components/schemas/DeliveryPoint'
@@ -373,10 +389,12 @@ paths:
                           $ref: '#/components/schemas/LinkToPersonStartDate'
                         link_to_person_end_date:
                           $ref: '#/components/schemas/LinkToPersonEndDate'
-                      description: One of the addresses historically associated to the person.
+                      description: One of the addresses historically associated to
+                        the person.
                   associated_people:
                     type: array
-                    description: The list of related and associated people to person or business in belongs_to array.
+                    description: The list of related and associated people to person
+                      or business in belongs_to array.
                     items:
                       type: object
                       properties:
@@ -401,7 +419,8 @@ paths:
                           $ref: '#/components/schemas/Relation'
                   alternate_phones:
                     type: array
-                    description: The list of alternate phone numbers of the primary owner of the phone number.
+                    description: The list of alternate phone numbers of the primary
+                      owner of the phone number.
                     items:
                       type: object
                       properties:
@@ -413,38 +432,40 @@ paths:
                           example: Phone.3dbb6fef-a2df-4b08-cfe3-bc7128b6f5b4
                         phone_number:
                           type: string
-                          description: The phone number in E.164 or local format. The default country calling code is +1 (USA).
+                          description: The phone number in E.164 or local format.
+                            The default country calling code is +1 (USA).
                           nullable: true
                           example: '2069735100'
                         line_type:
                           type: string
-                          description: |-
-                            The line type of the phone number.
-
-                            * `Landline` - Traditional wired phone line.
-                            * `Mobile` - Wireless phone line.
-                            * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                            * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                            * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                            * `TollFree` - Callee pays for call.
-                            * `Voicemail` - Voicemail-only service.
-                            * `Other` - Line type is unclear or does not match current categories.
+                          description: "The line type of the phone number.\n\n* `Landline`\
+                            \ - Traditional wired phone line.\n* `Mobile` - Wireless\
+                            \ phone line.\n* `FixedVOIP` - VOIP number connected to\
+                            \ a physical address, such as Vonix or Comcast.\n* `NonFixedVOIP`\
+                            \ - VOIP number unconnected to a fixed physical address,\
+                            \ such as Google Voice or Skype.\n* `Premium` - Caller\
+                            \ pays a premium for the call\u2013e.g. 976 area code.\n\
+                            * `TollFree` - Callee pays for call.\n* `Voicemail` -\
+                            \ Voicemail-only service.\n* `Other` - Line type is unclear\
+                            \ or does not match current categories."
                           nullable: true
                           example: NonFixedVOIP
                           enum:
-                            - Landline
-                            - Premium
-                            - NonFixedVOIP
-                            - Mobile
-                            - FixedVOIP
-                            - TollFree
-                            - Other
-                            - Voicemail
+                          - Landline
+                          - Premium
+                          - NonFixedVOIP
+                          - Mobile
+                          - FixedVOIP
+                          - TollFree
+                          - Other
+                          - Voicemail
                   error:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Invalid Input`, `International number. Not authorized`, or `Missing Input`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Invalid Input`, `International
+                      number. Not authorized`, or `Missing Input`.
                     example: Missing Input
                     items:
                       type: string
@@ -458,33 +479,34 @@ paths:
           $ref: '#/components/responses/429'
         '500':
           $ref: '#/components/responses/500'
-      x-code-samples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --request GET \
-              --url 'https://api.trestleiq.com/3.1/phone?phone=2069735100&phone.country_hint=US&phone.name_hint=Waidong Syrws&phone.postal_code_hint=98264' \
-              --header 'accept: application/json' \
-              --header 'x-api-key: {insert_api_key}'
+      x-codeSamples:
+      - lang: Shell
+        label: cURL
+        source: "curl --request GET \\\n  --url 'https://api.trestleiq.com/3.1/phone?phone=2069735100&phone.country_hint=US&phone.name_hint=Waidong\
+          \ Syrws&phone.postal_code_hint=98264' \\\n  --header 'accept: application/json'\
+          \ \\\n  --header 'x-api-key: {insert_api_key}'"
   /3.0/caller_id:
     get:
       tags:
-        - Caller Identification API
+      - Caller Identification API
       summary: Caller ID API 3.0
       operationId: getCallerId
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.1/caller_id?phone=<span style='color: #408FB1'>[insert_phone_number]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.1/caller_id?phone=<span style=''color: #408FB1''>[insert_phone_number]</span>
+        </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: phone
-          $ref: '#/components/parameters/phone'
-        - name: phone.country_hint
-          $ref: '#/components/parameters/countryHint'
-        - name: phone.name_hint
-          $ref: '#/components/parameters/nameHint'
-        - name: phone.postal_code_hint
-          $ref: '#/components/parameters/postalCodeHint'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: phone
+        $ref: '#/components/parameters/phone'
+      - name: phone.country_hint
+        $ref: '#/components/parameters/countryHint'
+      - name: phone.name_hint
+        $ref: '#/components/parameters/nameHint'
+      - name: phone.postal_code_hint
+        $ref: '#/components/parameters/postalCodeHint'
       responses:
         '200':
           description: Successful reverse phone response.
@@ -514,31 +536,30 @@ paths:
                     example: '1'
                   line_type:
                     type: string
-                    description: |-
-                      The line type of the phone number.
-
-                      * `Landline` - Traditional wired phone line.
-                      * `Mobile` - Wireless phone line.
-                      * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                      * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                      * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                      * `TollFree` - Callee pays for call.
-                      * `Voicemail` - Voicemail-only service.
-                      * `Other` - Line type is unclear or does not match current categories.
+                    description: "The line type of the phone number.\n\n* `Landline`\
+                      \ - Traditional wired phone line.\n* `Mobile` - Wireless phone\
+                      \ line.\n* `FixedVOIP` - VOIP number connected to a physical\
+                      \ address, such as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP\
+                      \ number unconnected to a fixed physical address, such as Google\
+                      \ Voice or Skype.\n* `Premium` - Caller pays a premium for the\
+                      \ call\u2013e.g. 976 area code.\n* `TollFree` - Callee pays\
+                      \ for call.\n* `Voicemail` - Voicemail-only service.\n* `Other`\
+                      \ - Line type is unclear or does not match current categories."
                     nullable: true
                     example: NonFixedVOIP
                     enum:
-                      - Landline
-                      - Premium
-                      - NonFixedVOIP
-                      - Mobile
-                      - FixedVOIP
-                      - TollFree
-                      - Other
-                      - Voicemail
+                    - Landline
+                    - Premium
+                    - NonFixedVOIP
+                    - Mobile
+                    - FixedVOIP
+                    - TollFree
+                    - Other
+                    - Voicemail
                   carrier:
                     type: string
-                    description: The company that provides voice and/or data services for the phone number. Carriers are returned at the MVNO level.
+                    description: The company that provides voice and/or data services
+                      for the phone number. Carriers are returned at the MVNO level.
                     nullable: true
                     example: Trestle Telco
                   is_prepaid:
@@ -556,11 +577,12 @@ paths:
                     description: The primary owner of the phone number.
                     nullable: true
                     oneOf:
-                      - $ref: '#/components/schemas/PhoneOwnerPerson'
-                      - $ref: '#/components/schemas/PhoneOwnerBusiness'
+                    - $ref: '#/components/schemas/PhoneOwnerPerson'
+                    - $ref: '#/components/schemas/PhoneOwnerBusiness'
                   current_addresses:
                     type: array
-                    description: A list of unique current locations associated with Person or Business in belongs_to array.
+                    description: A list of unique current locations associated with
+                      Person or Business in belongs_to array.
                     items:
                       type: object
                       properties:
@@ -575,21 +597,23 @@ paths:
                           description: The type of the location.
                           nullable: true
                           enum:
-                            - Address
-                            - Neighborhood
-                            - Country
-                            - ZipPlus4
-                            - PostalCode
-                            - City
-                            - State
+                          - Address
+                          - Neighborhood
+                          - Country
+                          - ZipPlus4
+                          - PostalCode
+                          - City
+                          - State
                         street_line_1:
                           type: string
-                          description: The first line of the _street_ part in the structured address.
+                          description: The first line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: 100 Syrws St
                         street_line_2:
                           type: string
-                          description: The second line of the _street_ part in the structured address.
+                          description: The second line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: Ste 1
                         city:
@@ -615,7 +639,8 @@ paths:
                           example: WA
                         country_code:
                           type: string
-                          description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                          description: 'The ISO-3166 alpha-2 country code of the address.
+                            See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                           format: ISO-3166-2
                           nullable: true
                           example: US
@@ -637,28 +662,33 @@ paths:
                               description: The accuracy of the geographical location.
                               nullable: true
                               enum:
-                                - Neighborhood
-                                - Country
-                                - PostalCode
-                                - Street
-                                - City
-                                - State
-                                - RoofTop
-                          description: The coordinates of the geographical location of the address.
+                              - Neighborhood
+                              - Country
+                              - PostalCode
+                              - Street
+                              - City
+                              - State
+                              - RoofTop
+                          description: The coordinates of the geographical location
+                            of the address.
                         is_active:
                           type: boolean
-                          description: True if the address is currently receiving mail.
+                          description: True if the address is currently receiving
+                            mail.
                           nullable: true
                         delivery_point:
                           $ref: '#/components/schemas/DeliveryPoint'
                         link_to_person_start_date:
                           $ref: '#/components/schemas/LinkToPersonStartDate'
-                      description: One of the addresses currently associated to the person.
+                      description: One of the addresses currently associated to the
+                        person.
                   error:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Invalid Input`, `International number. Not authorized`, or `Missing Input`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Invalid Input`, `International
+                      number. Not authorized`, or `Missing Input`.
                     example: Missing Input
                     items:
                       type: string
@@ -673,27 +703,28 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET '/https://api.trestleiq.com/3.0/caller_id?phone=2069735100&phone.country_hint=US&phone.name_hint=Waidong+Syrys&phone.postal_code_hint=98264'  
-             --header 'x-api-key: [insert_api_key]'  
-             --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET '/https://api.trestleiq.com/3.0/caller_id?phone=2069735100&phone.country_hint=US&phone.name_hint=Waidong+Syrys&phone.postal_code_hint=98264'\
+          \  \n --header 'x-api-key: [insert_api_key]'  \n --header 'Accept: application/json'"
   /3.1/cnam:
     get:
       tags:
-        - Smart CNAM API
+      - Smart CNAM API
       summary: Smart CNAM API 3.1
       operationId: getCNAM
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.1/cnam?api_key=<span style='color: #408FB1'>[insert_key]</span>&phone=<span style='color: #408FB1'>[insert_phone_number]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.1/cnam?api_key=<span style=''color: #408FB1''>[insert_key]</span>&phone=<span
+        style=''color: #408FB1''>[insert_phone_number]</span> </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: phone
-          $ref: '#/components/parameters/phone'
-        - name: phone.country_hint
-          $ref: '#/components/parameters/countryHint'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: phone
+        $ref: '#/components/parameters/phone'
+      - name: phone.country_hint
+        $ref: '#/components/parameters/countryHint'
       responses:
         '200':
           description: Successful reverse phone response.
@@ -718,12 +749,14 @@ paths:
                     description: The primary owner of the phone number.
                     nullable: true
                     oneOf:
-                      - $ref: '#/components/schemas/PhoneOwnerPersonSmartCNAM'
+                    - $ref: '#/components/schemas/PhoneOwnerPersonSmartCNAM'
                   error:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Invalid Input`, `International number. Not authorized`, or `Missing Input`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Invalid Input`, `International
+                      number. Not authorized`, or `Missing Input`.
                     example: Missing Input
                     items:
                       type: string
@@ -738,27 +771,28 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET '/https://api.trestleiq.com/3.1/cnam?phone=2069735100&phone.country_hint=US'  
-              --header 'x-api-key: [insert_api_key]'  
-              --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET '/https://api.trestleiq.com/3.1/cnam?phone=2069735100&phone.country_hint=US'\
+          \  \n  --header 'x-api-key: [insert_api_key]'  \n  --header 'Accept: application/json'"
   /3.0/phone_intel:
     get:
       tags:
-        - Phone Validation API
+      - Phone Validation API
       summary: Phone Validation API 3.0
       operationId: getPhoneValidation
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.0/phone_intel?phone=<span style='color: #408FB1'>[insert_phone]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.0/phone_intel?phone=<span style=''color: #408FB1''>[insert_phone]</span>
+        </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: phone
-          $ref: '#/components/parameters/phone'
-        - name: phone.country_hint
-          $ref: '#/components/parameters/countryHint'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: phone
+        $ref: '#/components/parameters/phone'
+      - name: phone.country_hint
+        $ref: '#/components/parameters/countryHint'
       responses:
         '200':
           description: Successful phone validation response.
@@ -782,16 +816,34 @@ paths:
                     example: true
                   activity_score:
                     type: integer
-                    description: |
-                      Trestle's activity scores range from 0 to 100. A score of 100 means consistent activity in the last 12 months, and a score of 0 means a disconnected number or no activity has been seen in the past year.
+                    description: 'Trestle''s activity scores range from 0 to 100.
+                      A score of 100 means consistent activity in the last 12 months,
+                      and a score of 0 means a disconnected number or no activity
+                      has been seen in the past year.
 
-                      An activity score of 70 or above means there is a high confidence that the phone is connected, assigned to a subscriber, and someone has been taking calls consistently.
-                      An activity score of 30 or below means there is a high confidence that the phone is either disconnected or no one will answer the call when the number is dialed in.
-                      An activity score of 50 means Trestle doesn't have enough signals to predict whether the phone is connected or disconnected/inactive.
 
-                      If you want to filter leads based on the activity score, the following rules can be recommended:
-                      - Prioritize dialing good numbers with consistent activity: Scores 70 or above.
-                      - Weed out leads with disconnected/inactive numbers: Scores of 30 or below.
+                      An activity score of 70 or above means there is a high confidence
+                      that the phone is connected, assigned to a subscriber, and someone
+                      has been taking calls consistently.
+
+                      An activity score of 30 or below means there is a high confidence
+                      that the phone is either disconnected or no one will answer
+                      the call when the number is dialed in.
+
+                      An activity score of 50 means Trestle doesn''t have enough signals
+                      to predict whether the phone is connected or disconnected/inactive.
+
+
+                      If you want to filter leads based on the activity score, the
+                      following rules can be recommended:
+
+                      - Prioritize dialing good numbers with consistent activity:
+                      Scores 70 or above.
+
+                      - Weed out leads with disconnected/inactive numbers: Scores
+                      of 30 or below.
+
+                      '
                     example: 57
                   country_calling_code:
                     type: string
@@ -801,41 +853,43 @@ paths:
                     example: '1'
                   country_code:
                     type: string
-                    description: 'The ISO-3166 alpha-2 country code of the phone number. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                    description: 'The ISO-3166 alpha-2 country code of the phone number.
+                      See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                     format: ISO-3166-2
                     nullable: true
                     example: US
                   country_name:
                     type: string
-                    description: The country name of the location associated with the phone number.
+                    description: The country name of the location associated with
+                      the phone number.
                     nullable: true
                     example: United States
                   line_type:
                     type: string
-                    description: |-
-                      The line type of the phone number.
-                      * `Landline` - Traditional wired phone line.
-                      * `Mobile` - Wireless phone line.
-                      * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                      * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                      * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                      * `TollFree` - Callee pays for call.
-                      * `Voicemail` - Voicemail-only service.
-                      * `Other` - Line type is unclear or does not match current categories.
+                    description: "The line type of the phone number.\n* `Landline`\
+                      \ - Traditional wired phone line.\n* `Mobile` - Wireless phone\
+                      \ line.\n* `FixedVOIP` - VOIP number connected to a physical\
+                      \ address, such as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP\
+                      \ number unconnected to a fixed physical address, such as Google\
+                      \ Voice or Skype.\n* `Premium` - Caller pays a premium for the\
+                      \ call\u2013e.g. 976 area code.\n* `TollFree` - Callee pays\
+                      \ for call.\n* `Voicemail` - Voicemail-only service.\n* `Other`\
+                      \ - Line type is unclear or does not match current categories."
                     nullable: true
                     example: NonFixedVOIP
                     enum:
-                      - Landline
-                      - Premium
-                      - NonFixedVOIP
-                      - Mobile
-                      - FixedVOIP
-                      - TollFree
-                      - Other
-                      - Voicemail
+                    - Landline
+                    - Premium
+                    - NonFixedVOIP
+                    - Mobile
+                    - FixedVOIP
+                    - TollFree
+                    - Other
+                    - Voicemail
                   carrier:
                     type: string
-                    description: The company that provides voice and/or data services for the phone number. Carriers are returned at the MVNO level.
+                    description: The company that provides voice and/or data services
+                      for the phone number. Carriers are returned at the MVNO level.
                     nullable: true
                     example: Level 3 Communications, LLC
                   is_prepaid:
@@ -847,7 +901,9 @@ paths:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Invalid Input`, `International number. Not authorized`, or `Missing Input`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Invalid Input`, `International
+                      number. Not authorized`, or `Missing Input`.
                     example: Missing Input
                     items:
                       type: string
@@ -862,35 +918,38 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET 'https://api.trestleiq.com/3.0/phone_intel?phone=2069735100&phone.country_hint=US'   
-              --header 'x-api-key: [insert_api_key]'  
-              --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET 'https://api.trestleiq.com/3.0/phone_intel?phone=2069735100&phone.country_hint=US'\
+          \   \n  --header 'x-api-key: [insert_api_key]'  \n  --header 'Accept: application/json'"
   /3.0/location:
     get:
       tags:
-        - Reverse Address API
+      - Reverse Address API
       summary: Reverse Address 3.0
       operationId: getLocation
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.0/location?api_key=<span style='color: #408FB1'>[insert_key]</span>&city=<span style='color: #408FB1'>[insert_city]</span>&postal_code=<span style='color: #408FB1'>[insert_postal_code]</span>&state_code=<span style='color: #408FB1'>[insert_state_code]</span>&street_line_1=<span style='color: #408FB1'>[insert_street_line_1]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.0/location?api_key=<span style=''color: #408FB1''>[insert_key]</span>&city=<span
+        style=''color: #408FB1''>[insert_city]</span>&postal_code=<span style=''color:
+        #408FB1''>[insert_postal_code]</span>&state_code=<span style=''color: #408FB1''>[insert_state_code]</span>&street_line_1=<span
+        style=''color: #408FB1''>[insert_street_line_1]</span> </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: street_line_1
-          $ref: '#/components/parameters/streetAddress1'
-        - name: street_line_2
-          $ref: '#/components/parameters/streetAddress2'
-        - name: city
-          $ref: '#/components/parameters/city'
-        - name: postal_code
-          $ref: '#/components/parameters/postalCode'
-        - name: state_code
-          $ref: '#/components/parameters/stateCode'
-        - name: country_code
-          $ref: '#/components/parameters/countryCode'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: street_line_1
+        $ref: '#/components/parameters/streetAddress1'
+      - name: street_line_2
+        $ref: '#/components/parameters/streetAddress2'
+      - name: city
+        $ref: '#/components/parameters/city'
+      - name: postal_code
+        $ref: '#/components/parameters/postalCode'
+      - name: state_code
+        $ref: '#/components/parameters/stateCode'
+      - name: country_code
+        $ref: '#/components/parameters/countryCode'
       responses:
         '200':
           description: Successful reverse address response.
@@ -912,12 +971,14 @@ paths:
                     example: true
                   street_line_1:
                     type: string
-                    description: The first line of the _street_ part in the structured address.
+                    description: The first line of the _street_ part in the structured
+                      address.
                     nullable: true
                     example: 100 Syrws St
                   street_line_2:
                     type: string
-                    description: The second line of the _street_ part in the structured address.
+                    description: The second line of the _street_ part in the structured
+                      address.
                     nullable: true
                     example: Ste 1
                   city:
@@ -943,7 +1004,8 @@ paths:
                     example: WA
                   country_code:
                     type: string
-                    description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                    description: 'The ISO-3166 alpha-2 country code of the address.
+                      See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                     format: ISO-3166-2
                     nullable: true
                     example: US
@@ -965,59 +1027,67 @@ paths:
                         description: The accuracy of the geographical location.
                         nullable: true
                         enum:
-                          - Neighborhood
-                          - Country
-                          - PostalCode
-                          - Street
-                          - City
-                          - State
-                          - RoofTop
-                    description: The coordinates of the geographical location of the address.
+                        - Neighborhood
+                        - Country
+                        - PostalCode
+                        - Street
+                        - City
+                        - State
+                        - RoofTop
+                    description: The coordinates of the geographical location of the
+                      address.
                   is_active:
                     type: boolean
                     description: True if the address is currently receiving mail.
                     nullable: true
                   is_commercial:
                     type: boolean
-                    description: |-
-                      True if the address is a business address.
+                    description: 'True if the address is a business address.
 
-                      When shipping physical goods, commercial addresses are typically a positive signal and indicate that the order is not fraudulent.
+
+                      When shipping physical goods, commercial addresses are typically
+                      a positive signal and indicate that the order is not fraudulent.'
                     nullable: true
                     example: true
                   is_forwarder:
                     type: boolean
-                    description: True if the address is performing freight forwarding or reshipping services. Forwarders most likely will send the goods outside of the country.
+                    description: True if the address is performing freight forwarding
+                      or reshipping services. Forwarders most likely will send the
+                      goods outside of the country.
                     nullable: true
                     example: false
                   delivery_point:
                     $ref: '#/components/schemas/DeliveryPoint'
                   current_residents:
                     type: array
-                    description: The list of current person and business residents at the address.
+                    description: The list of current person and business residents
+                      at the address.
                     items:
                       type: object
                       oneOf:
-                        - $ref: '#/components/schemas/ResidentPerson'
-                        - $ref: '#/components/schemas/ResidentBusiness'
+                      - $ref: '#/components/schemas/ResidentPerson'
+                      - $ref: '#/components/schemas/ResidentBusiness'
                   last_sale_date:
                     type: string
-                    description: The date of the last sale of the property. _Available for US addresses only._
+                    description: The date of the last sale of the property. _Available
+                      for US addresses only._
                     format: date
                     nullable: true
                   total_value:
                     type: integer
-                    description: The total assessed tax value of the property in USD. _Available for US addresses only._
+                    description: The total assessed tax value of the property in USD.
+                      _Available for US addresses only._
                     format: int64
                     nullable: true
                   owners:
                     type: array
-                    description: The list of the current owners of the property. _Available for US addresses only._
+                    description: The list of the current owners of the property. _Available
+                      for US addresses only._
                     items:
                       type: object
                       oneOf:
-                        - $ref: '#/components/schemas/OwnerPerson'
-                        - $ref: '#/components/schemas/OwnerBusiness'
+                      - $ref: '#/components/schemas/OwnerPerson'
+                      - $ref: '#/components/schemas/OwnerBusiness'
                   associated_addresses:
                     type: array
                     description: The list of addresses associated to the address.
@@ -1037,12 +1107,14 @@ paths:
                           example: true
                         street_line_1:
                           type: string
-                          description: The first line of the _street_ part in the structured address.
+                          description: The first line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: 100 Syrws St
                         street_line_2:
                           type: string
-                          description: The second line of the _street_ part in the structured address.
+                          description: The second line of the _street_ part in the
+                            structured address.
                           nullable: true
                           example: Ste 1
                         city:
@@ -1068,7 +1140,8 @@ paths:
                           example: WA
                         country_code:
                           type: string
-                          description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                          description: 'The ISO-3166 alpha-2 country code of the address.
+                            See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                           format: ISO-3166-2
                           nullable: true
                           example: US
@@ -1090,64 +1163,77 @@ paths:
                               description: The accuracy of the geographical location.
                               nullable: true
                               enum:
-                                - Neighborhood
-                                - Country
-                                - PostalCode
-                                - Street
-                                - City
-                                - State
-                                - RoofTop
-                          description: The coordinates of the geographical location of the address.
+                              - Neighborhood
+                              - Country
+                              - PostalCode
+                              - Street
+                              - City
+                              - State
+                              - RoofTop
+                          description: The coordinates of the geographical location
+                            of the address.
                         is_active:
                           type: boolean
-                          description: True if the address is currently receiving mail.
+                          description: True if the address is currently receiving
+                            mail.
                           nullable: true
                         is_commercial:
                           type: boolean
-                          description: |-
-                            True if the address is a business address.
+                          description: 'True if the address is a business address.
 
-                            When shipping physical goods, commercial addresses are typically a positive signal and indicate that the order is not fraudulent.
+
+                            When shipping physical goods, commercial addresses are
+                            typically a positive signal and indicate that the order
+                            is not fraudulent.'
                           nullable: true
                           example: true
                         is_forwarder:
                           type: boolean
-                          description: True if the address is performing freight forwarding or reshipping services. Forwarders most likely will send the goods outside of the country.
+                          description: True if the address is performing freight forwarding
+                            or reshipping services. Forwarders most likely will send
+                            the goods outside of the country.
                           nullable: true
                           example: false
                         delivery_point:
                           $ref: '#/components/schemas/DeliveryPoint'
                         current_residents:
                           type: array
-                          description: The list of current person and business residents at the address.
+                          description: The list of current person and business residents
+                            at the address.
                           items:
                             type: object
                             oneOf:
-                              - $ref: '#/components/schemas/ResidentPerson'
-                              - $ref: '#/components/schemas/ResidentBusiness'
+                            - $ref: '#/components/schemas/ResidentPerson'
+                            - $ref: '#/components/schemas/ResidentBusiness'
                         last_sale_date:
                           type: string
-                          description: The date of the last sale of the property. _Available for US addresses only._
+                          description: The date of the last sale of the property.
+                            _Available for US addresses only._
                           format: date
                           nullable: true
                         total_value:
                           type: integer
-                          description: The total assessed tax value of the property in USD. _Available for US addresses only._
+                          description: The total assessed tax value of the property
+                            in USD. _Available for US addresses only._
                           format: int64
                           nullable: true
                         owners:
                           type: array
-                          description: The list of the current owners of the property. _Available for US addresses only._
+                          description: The list of the current owners of the property.
+                            _Available for US addresses only._
                           items:
                             type: object
                             oneOf:
-                              - $ref: '#/components/schemas/OwnerBusiness'
-                              - $ref: '#/components/schemas/OwnerPerson'
+                            - $ref: '#/components/schemas/OwnerBusiness'
+                            - $ref: '#/components/schemas/OwnerPerson'
                   error:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Missing Input`, `Invalid address`, `Invalid house/building number`, `Missing unit/apt/suite number`, or `Invalid unit/apy/suite number`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Missing Input`, `Invalid address`,
+                      `Invalid house/building number`, `Missing unit/apt/suite number`,
+                      or `Invalid unit/apy/suite number`.
                     example: Missing Input
                     items:
                       type: string
@@ -1162,41 +1248,44 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET 'https://api.trestleiq.com/3.0/location?street_line_1=100 Syrws St&street_line_2=Ste 1&city=Lynden&postal_code=98264&state_code=WA&country_code=US'   
-             --header 'x-api-key: [insert_api_key]'  
-              --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET 'https://api.trestleiq.com/3.0/location?street_line_1=100\
+          \ Syrws St&street_line_2=Ste 1&city=Lynden&postal_code=98264&state_code=WA&country_code=US'\
+          \   \n --header 'x-api-key: [insert_api_key]'  \n  --header 'Accept: application/json'"
   /3.1/person:
     get:
       tags:
-        - Find Person API
+      - Find Person API
       summary: Find Person 3.1
       operationId: findPerson
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/3.1/person?name=<span style='color: #408FB1'>[insert_name]</span>&address.city=<span style='color: #408FB1'>[insert_city]</span>&address.state_code=<span style='color: #408FB1'>[insert_state_code]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/3.1/person?name=<span style=''color: #408FB1''>[insert_name]</span>&address.city=<span
+        style=''color: #408FB1''>[insert_city]</span>&address.state_code=<span style=''color:
+        #408FB1''>[insert_state_code]</span> </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-        - name: name
-          in: query
-          description: The name of the person to search.
-          schema:
-            type: string
-          example: Jon Snow
-        - name: address.street_line_1
-          $ref: '#/components/parameters/streetAddress1'
-        - name: address.street_line_2
-          $ref: '#/components/parameters/streetAddress2'
-        - name: address.city
-          $ref: '#/components/parameters/city'
-        - name: address.postal_code
-          $ref: '#/components/parameters/postalCode'
-        - name: address.state_code
-          $ref: '#/components/parameters/stateCode'
-        - name: address.country_code
-          $ref: '#/components/parameters/countryCode'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+      - name: name
+        in: query
+        description: The name of the person to search.
+        schema:
+          type: string
+        example: Jon Snow
+      - name: address.street_line_1
+        $ref: '#/components/parameters/streetAddress1'
+      - name: address.street_line_2
+        $ref: '#/components/parameters/streetAddress2'
+      - name: address.city
+        $ref: '#/components/parameters/city'
+      - name: address.postal_code
+        $ref: '#/components/parameters/postalCode'
+      - name: address.state_code
+        $ref: '#/components/parameters/stateCode'
+      - name: address.country_code
+        $ref: '#/components/parameters/countryCode'
       responses:
         '200':
           description: Successful find person response.
@@ -1218,16 +1307,25 @@ paths:
                     $ref: '#/components/schemas/PartialError'
                   warnings:
                     type: array
-                    description:  Warnings returned as part of the response, if applicable. The possible values include - `Missing Input`, `Invalid Input Address`, `Invalid house/building number`, `Missing unit/apt/suite number`, or `Invalid unit/apy/suite number`. 
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Missing Input`, `Invalid Input
+                      Address`, `Invalid house/building number`, `Missing unit/apt/suite
+                      number`, or `Invalid unit/apy/suite number`.
                     example: Missing Input
                     items:
                       type: string
         '400':
-          description: |
-            - **Invalid Parameters Error:** Parameter called incorrectly.
-            - **Input Field Error:** Incorrect parameter information, such as non-existent area code on a phone number.
+          description: '- **Invalid Parameters Error:** Parameter called incorrectly.
+
+            - **Input Field Error:** Incorrect parameter information, such as non-existent
+            area code on a phone number.
+
             - **Input Error:** No parameters given.
-            - **Internal Error:** If there is an internal error while performing the checks
+
+            - **Internal Error:** If there is an internal error while performing the
+            checks
+
+            '
         '401':
           $ref: '#/components/responses/401'
         '403':
@@ -1237,60 +1335,67 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET 'https://api.trestleiq.com/3.1/person?address.city=Lynden&address.country_code=US&address.postal_code=98264&address.state_code=WA&address.street_line_1=100+Syrws+St&name=Waidong+L+Syrws'   
-             --header 'x-api-key: [insert_api_key]'  
-              --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET 'https://api.trestleiq.com/3.1/person?address.city=Lynden&address.country_code=US&address.postal_code=98264&address.state_code=WA&address.street_line_1=100+Syrws+St&name=Waidong+L+Syrws'\
+          \   \n --header 'x-api-key: [insert_api_key]'  \n  --header 'Accept: application/json'"
   /1.0/real_contact:
     get:
       tags:
-        - Real Contact API
+      - Real Contact API
       summary: Real Contact 1.0
       operationId: realContact
-      description: |
-        <p style='background-color:#E1E1E1; padding:10px'><b>URL Structure</b>: https://api.trestleiq.com/1.0/real_contact?api_key=<span style='color: #408FB1'>[insert_key]</span>&name=<span style='color: #408FB1'>[insert_name]</span>&phone=<span style='color: #408FB1'>[insert_phone]</span>&email=<span style='color: #408FB1'>[insert_email]</span>&ip_address=<span style='color: #408FB1'>[insert_ip_address]</span>&address.street_line_1=<span style='color: #408FB1'>[insert_street_line_1]</span>&address.city=<span style='color: #408FB1'>[insert_city]</span>&address.state_code=<span style='color: #408FB1'>[insert_state_code]</span>&address.postal_code=<span style='color: #408FB1'>[insert_postal_code]</span>&address.country_code=<span style='color: #408FB1'>[insert_country_code]</span> </p>
+      description: '<p style=''background-color:#E1E1E1; padding:10px''><b>URL Structure</b>:
+        https://api.trestleiq.com/1.0/real_contact?api_key=<span style=''color: #408FB1''>[insert_key]</span>&name=<span
+        style=''color: #408FB1''>[insert_name]</span>&phone=<span style=''color: #408FB1''>[insert_phone]</span>&email=<span
+        style=''color: #408FB1''>[insert_email]</span>&ip_address=<span style=''color:
+        #408FB1''>[insert_ip_address]</span>&address.street_line_1=<span style=''color:
+        #408FB1''>[insert_street_line_1]</span>&address.city=<span style=''color:
+        #408FB1''>[insert_city]</span>&address.state_code=<span style=''color: #408FB1''>[insert_state_code]</span>&address.postal_code=<span
+        style=''color: #408FB1''>[insert_postal_code]</span>&address.country_code=<span
+        style=''color: #408FB1''>[insert_country_code]</span> </p>
+
+        '
       parameters:
-        - name: x-api-key
-          $ref: '#/components/parameters/apiKey'
-          required: true
-        - name: name
-          in: query
-          description: The name of the person to search.
-          schema:
-            type: string
-          example: Jon Snow
-          required: true
-        - name: phone
-          in: query
-          schema:
-            type: string
-          description: The phone provided by the lead on the web form.
-          required: true
-          example: '4259853735'
-        - name: email
-          in: query
-          schema:
-            type: string
-          description: The email provided by the lead on the web form.
-          example: kushal.shah@gmail.com
-        - name: ip_address
-          in: query
-          schema:
-            type: string
-          description: The IP address from which the lead signed up on the web form.
-          example: 192.0.0.1
-        - name: address.street_line_1
-          $ref: '#/components/parameters/streetAddress1'
-        - name: address.city
-          $ref: '#/components/parameters/city'
-        - name: address.state_code
-          $ref: '#/components/parameters/stateCode'
-        - name: address.postal_code
-          $ref: '#/components/parameters/postalCode'
-        - name: address.country_code
-          $ref: '#/components/parameters/countryCode'
+      - name: x-api-key
+        $ref: '#/components/parameters/apiKey'
+        required: true
+      - name: name
+        in: query
+        description: The name of the person to search.
+        schema:
+          type: string
+        example: Jon Snow
+        required: true
+      - name: phone
+        in: query
+        schema:
+          type: string
+        description: The phone provided by the lead on the web form.
+        required: true
+        example: '4259853735'
+      - name: email
+        in: query
+        schema:
+          type: string
+        description: The email provided by the lead on the web form.
+        example: kushal.shah@gmail.com
+      - name: ip_address
+        in: query
+        schema:
+          type: string
+        description: The IP address from which the lead signed up on the web form.
+        example: 192.0.0.1
+      - name: address.street_line_1
+        $ref: '#/components/parameters/streetAddress1'
+      - name: address.city
+        $ref: '#/components/parameters/city'
+      - name: address.state_code
+        $ref: '#/components/parameters/stateCode'
+      - name: address.postal_code
+        $ref: '#/components/parameters/postalCode'
+      - name: address.country_code
+        $ref: '#/components/parameters/countryCode'
       responses:
         '200':
           description: Successful real contact response.
@@ -1306,53 +1411,78 @@ paths:
                     example: true
                   phone.activity_score:
                     type: integer
-                    description: |
-                      Trestle's activity scores range from 0 to 100. A score of 100 means consistent activity in the last 12 months, and a score of 0 means a disconnected number or no activity has been seen in the past year.
+                    description: 'Trestle''s activity scores range from 0 to 100.
+                      A score of 100 means consistent activity in the last 12 months,
+                      and a score of 0 means a disconnected number or no activity
+                      has been seen in the past year.
 
-                      An activity score of 70 or above means there is a high confidence that the phone is connected, assigned to a subscriber, and someone has been taking calls consistently.
-                      An activity score of 30 or below means there is a high confidence that the phone is either disconnected or no one will answer the call when the number is dialed in.
-                      An activity score of 50 means Trestle doesn't have enough signals to predict whether the phone is connected or disconnected/inactive.
 
-                      If you want to filter leads based on the activity score, the following rules can be recommended:
-                      - Prioritize dialing good numbers with consistent activity: Scores 70 or above.
-                      - Weed out leads with disconnected/inactive numbers: Scores of 30 or below.
+                      An activity score of 70 or above means there is a high confidence
+                      that the phone is connected, assigned to a subscriber, and someone
+                      has been taking calls consistently.
+
+                      An activity score of 30 or below means there is a high confidence
+                      that the phone is either disconnected or no one will answer
+                      the call when the number is dialed in.
+
+                      An activity score of 50 means Trestle doesn''t have enough signals
+                      to predict whether the phone is connected or disconnected/inactive.
+
+
+                      If you want to filter leads based on the activity score, the
+                      following rules can be recommended:
+
+                      - Prioritize dialing good numbers with consistent activity:
+                      Scores 70 or above.
+
+                      - Weed out leads with disconnected/inactive numbers: Scores
+                      of 30 or below.
+
+                      '
                     example: 57
                   phone.line_type:
                     type: string
-                    description: |-
-                      The line type of the phone number.
-
-                      * `Landline` - Traditional wired phone line.
-                      * `Mobile` - Wireless phone line.
-                      * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                      * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                      * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                      * `TollFree` - Callee pays for call.
-                      * `Voicemail` - Voicemail-only service.
-                      * `Other` - Line type is unclear or does not match current categories.
+                    description: "The line type of the phone number.\n\n* `Landline`\
+                      \ - Traditional wired phone line.\n* `Mobile` - Wireless phone\
+                      \ line.\n* `FixedVOIP` - VOIP number connected to a physical\
+                      \ address, such as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP\
+                      \ number unconnected to a fixed physical address, such as Google\
+                      \ Voice or Skype.\n* `Premium` - Caller pays a premium for the\
+                      \ call\u2013e.g. 976 area code.\n* `TollFree` - Callee pays\
+                      \ for call.\n* `Voicemail` - Voicemail-only service.\n* `Other`\
+                      \ - Line type is unclear or does not match current categories."
                     nullable: true
                     example: Mobile
                     enum:
-                      - Landline
-                      - Premium
-                      - NonFixedVOIP
-                      - Mobile
-                      - FixedVOIP
-                      - TollFree
-                      - Other
-                      - Voicemail
+                    - Landline
+                    - Premium
+                    - NonFixedVOIP
+                    - Mobile
+                    - FixedVOIP
+                    - TollFree
+                    - Other
+                    - Voicemail
                   phone.name_match:
                     type: boolean
-                    description: |
-                      A match/no match indicator whether the name provided on the lead form matches to the input phone number according to our database.
-                      A match is a positive indicator that verifies the lead is real and is who he/she says they are.
+                    description: 'A match/no match indicator whether the name provided
+                      on the lead form matches to the input phone number according
+                      to our database.
+
+                      A match is a positive indicator that verifies the lead is real
+                      and is who he/she says they are.
+
+                      '
                     example: true
                     nullable: true
                   contact_grade:
                     type: string
-                    description: |
-                      An A-F grade determining the quality of the lead and whether it is contactable.
-                      A Grade-F lead is a bad lead and should be deprioritized while a Grade-A lead is real and contactable and should be prioritized.
+                    description: 'An A-F grade determining the quality of the lead
+                      and whether it is contactable.
+
+                      A Grade-F lead is a bad lead and should be deprioritized while
+                      a Grade-A lead is real and contactable and should be prioritized.
+
+                      '
                     example: A
                   error:
                     type: object
@@ -1360,15 +1490,23 @@ paths:
                     type: array
                     items:
                       type: string
-                    description: |-
-                      Warnings returned as part of the response, if applicable. The possible values include - `Missing Input`, `International number. Not authorized.`, `Disposable Email`, `Invalid Phone`, `Invalid Email`, or `Invalid Address`.
+                    description: Warnings returned as part of the response, if applicable.
+                      The possible values include - `Missing Input`, `International
+                      number. Not authorized.`, `Disposable Email`, `Invalid Phone`,
+                      `Invalid Email`, or `Invalid Address`.
                     example: Missing Input
         '400':
-          description: |
-            - **Invalid Parameters Error:** Parameter called incorrectly.
-            - **Input Field Error:** Incorrect parameter information, such as non-existent area code on a phone number.
+          description: '- **Invalid Parameters Error:** Parameter called incorrectly.
+
+            - **Input Field Error:** Incorrect parameter information, such as non-existent
+            area code on a phone number.
+
             - **Input Error:** No parameters given.
-            - **Internal Error:** If there is an internal error while performing the checks
+
+            - **Internal Error:** If there is an internal error while performing the
+            checks
+
+            '
         '401':
           $ref: '#/components/responses/401'
         '403':
@@ -1378,12 +1516,10 @@ paths:
         '500':
           $ref: '#/components/responses/500'
       x-codeSamples:
-        - lang: Shell
-          label: cURL
-          source: |-
-            curl --location --request GET 'https://api.trestleiq.com/1.0/real_contact?name=Waidong+L+Syrws&phone=2069735100&address.city=Lynden&address.country_code=US&address.postal_code=98264&address.state_code=WA&address.street_line_1=100+Syrws+St&email=wsyrws@gmail.com&ip_address=192.0.0.1'   
-             --header 'x-api-key: [insert_api_key]'  
-              --header 'Accept: application/json'
+      - lang: Shell
+        label: cURL
+        source: "curl --location --request GET 'https://api.trestleiq.com/1.0/real_contact?name=Waidong+L+Syrws&phone=2069735100&address.city=Lynden&address.country_code=US&address.postal_code=98264&address.state_code=WA&address.street_line_1=100+Syrws+St&email=wsyrws@gmail.com&ip_address=192.0.0.1'\
+          \   \n --header 'x-api-key: [insert_api_key]'  \n  --header 'Accept: application/json'"
 components:
   schemas:
     AgeRange:
@@ -1409,10 +1545,10 @@ components:
       example: SingleUnit
       nullable: true
       enum:
-        - SingleUnit
-        - MultiUnit
-        - POBox
-        - PartialAddress
+      - SingleUnit
+      - MultiUnit
+      - POBox
+      - PartialAddress
     Firstname:
       type: string
       description: The first name of the person.
@@ -1486,15 +1622,16 @@ components:
           nullable: true
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           example: Business
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         industry:
           type: array
           description: Returns a list of business industry classification.
@@ -1530,15 +1667,16 @@ components:
           $ref: '#/components/schemas/Gender'
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           nullable: true
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         industry:
           type: string
           description: Not applicable.
@@ -1550,11 +1688,11 @@ components:
           type: string
           description: Incomplete response due to external timeouts.
           enum:
-            - InternalError
+          - InternalError
         message:
           type: string
           enum:
-            - Could not retrieve entire response
+          - Could not retrieve entire response
     Person:
       type: object
       properties:
@@ -1585,12 +1723,14 @@ components:
           $ref: '#/components/schemas/PersonAddress'
         current_addresses:
           type: array
-          description: An array of current address locations associated with this person.
+          description: An array of current address locations associated with this
+            person.
           items:
             $ref: '#/components/schemas/PersonAddress'
         historical_addresses:
           type: array
-          description: Returns a list of unique historical locations associated with the person/business.
+          description: Returns a list of unique historical locations associated with
+            the person/business.
           items:
             type: object
             properties:
@@ -1605,21 +1745,23 @@ components:
                 description: The type of the location.
                 nullable: true
                 enum:
-                  - Address
-                  - Neighborhood
-                  - Country
-                  - ZipPlus4
-                  - PostalCode
-                  - City
-                  - State
+                - Address
+                - Neighborhood
+                - Country
+                - ZipPlus4
+                - PostalCode
+                - City
+                - State
               street_line_1:
                 type: string
-                description: The first line of the _street_ part in the structured address.
+                description: The first line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: 100 Syrws St
               street_line_2:
                 type: string
-                description: The second line of the _street_ part in the structured address.
+                description: The second line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: Ste 1
               city:
@@ -1645,7 +1787,8 @@ components:
                 example: WA
               country_code:
                 type: string
-                description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                description: 'The ISO-3166 alpha-2 country code of the address. See:
+                  [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                 format: ISO-3166-2
                 nullable: true
                 example: US
@@ -1667,13 +1810,13 @@ components:
                     description: The accuracy of the geographical location.
                     nullable: true
                     enum:
-                      - Neighborhood
-                      - Country
-                      - PostalCode
-                      - Street
-                      - City
-                      - State
-                      - RoofTop
+                    - Neighborhood
+                    - Country
+                    - PostalCode
+                    - Street
+                    - City
+                    - State
+                    - RoofTop
                 description: The coordinates of the geographical location of the address.
               is_active:
                 type: boolean
@@ -1702,28 +1845,26 @@ components:
                 $ref: '#/components/schemas/PhoneNumber'
               line_type:
                 type: string
-                description: |-
-                  The line type of the phone number.
-
-                  * `Landline` - Traditional wired phone line.
-                  * `Mobile` - Wireless phone line.
-                  * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                  * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                  * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                  * `TollFree` - Callee pays for call.
-                  * `Voicemail` - Voicemail-only service.
-                  * `Other` - Line type is unclear or does not match current categories.
+                description: "The line type of the phone number.\n\n* `Landline` -\
+                  \ Traditional wired phone line.\n* `Mobile` - Wireless phone line.\n\
+                  * `FixedVOIP` - VOIP number connected to a physical address, such\
+                  \ as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP number unconnected\
+                  \ to a fixed physical address, such as Google Voice or Skype.\n\
+                  * `Premium` - Caller pays a premium for the call\u2013e.g. 976 area\
+                  \ code.\n* `TollFree` - Callee pays for call.\n* `Voicemail` - Voicemail-only\
+                  \ service.\n* `Other` - Line type is unclear or does not match current\
+                  \ categories."
                 nullable: true
                 example: NonFixedVOIP
                 enum:
-                  - Landline
-                  - Premium
-                  - NonFixedVOIP
-                  - Mobile
-                  - FixedVOIP
-                  - TollFree
-                  - Other
-                  - Voicemail
+                - Landline
+                - Premium
+                - NonFixedVOIP
+                - Mobile
+                - FixedVOIP
+                - TollFree
+                - Other
+                - Voicemail
         associated_people:
           type: array
           description: The people that are associated to the business.
@@ -1764,13 +1905,13 @@ components:
           description: The type of the location.
           nullable: true
           enum:
-            - Address
-            - Neighborhood
-            - Country
-            - ZipPlus4
-            - PostalCode
-            - City
-            - State
+          - Address
+          - Neighborhood
+          - Country
+          - ZipPlus4
+          - PostalCode
+          - City
+          - State
         street_line_1:
           type: string
           description: The first line of the _street_ part in the structured address.
@@ -1826,13 +1967,13 @@ components:
               description: The accuracy of the geographical location.
               nullable: true
               enum:
-                - Neighborhood
-                - Country
-                - PostalCode
-                - Street
-                - City
-                - State
-                - RoofTop
+              - Neighborhood
+              - Country
+              - PostalCode
+              - Street
+              - City
+              - State
+              - RoofTop
           description: The coordinates of the geographical location of the address.
         is_active:
           type: boolean
@@ -1885,16 +2026,17 @@ components:
           nullable: true
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           example: Business
           nullable: true
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         link_to_phone_start_date:
           type: string
           description: The date when the business was first linked to the phone number.
@@ -1935,15 +2077,16 @@ components:
           $ref: '#/components/schemas/Gender'
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           example: Person
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         link_to_phone_start_date:
           type: string
           description: The date when the person was first linked to the phone number.
@@ -1976,7 +2119,8 @@ components:
           $ref: '#/components/schemas/Lastname'
     PhoneNumber:
       type: string
-      description: The phone number in E.164 or local format. The default country calling code is +1 (USA).
+      description: The phone number in E.164 or local format. The default country
+        calling code is +1 (USA).
       nullable: true
       example: '2069735100'
     Relation:
@@ -1984,8 +2128,8 @@ components:
       description: Relation of the associated person.
       nullable: true
       enum:
-        - Household
-        - PotentialOwner
+      - Household
+      - PotentialOwner
     ResidentBusiness:
       type: object
       properties:
@@ -2023,15 +2167,16 @@ components:
           nullable: true
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           nullable: true
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         industry:
           type: array
           description: Returns a list of business industry classification.
@@ -2059,28 +2204,26 @@ components:
                 $ref: '#/components/schemas/PhoneNumber'
               line_type:
                 type: string
-                description: |-
-                  The line type of the phone number.
-
-                  * `Landline` - Traditional wired phone line.
-                  * `Mobile` - Wireless phone line.
-                  * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                  * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                  * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                  * `TollFree` - Callee pays for call.
-                  * `Voicemail` - Voicemail-only service.
-                  * `Other` - Line type is unclear or does not match current categories.
+                description: "The line type of the phone number.\n\n* `Landline` -\
+                  \ Traditional wired phone line.\n* `Mobile` - Wireless phone line.\n\
+                  * `FixedVOIP` - VOIP number connected to a physical address, such\
+                  \ as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP number unconnected\
+                  \ to a fixed physical address, such as Google Voice or Skype.\n\
+                  * `Premium` - Caller pays a premium for the call\u2013e.g. 976 area\
+                  \ code.\n* `TollFree` - Callee pays for call.\n* `Voicemail` - Voicemail-only\
+                  \ service.\n* `Other` - Line type is unclear or does not match current\
+                  \ categories."
                 nullable: true
                 example: NonFixedVOIP
                 enum:
-                  - Landline
-                  - Premium
-                  - NonFixedVOIP
-                  - Mobile
-                  - FixedVOIP
-                  - TollFree
-                  - Other
-                  - Voicemail
+                - Landline
+                - Premium
+                - NonFixedVOIP
+                - Mobile
+                - FixedVOIP
+                - TollFree
+                - Other
+                - Voicemail
         historical_addresses:
           type: array
           description: The list of addresses that are historically linked to the business.
@@ -2098,21 +2241,23 @@ components:
                 description: The type of the location.
                 nullable: true
                 enum:
-                  - Address
-                  - Neighborhood
-                  - Country
-                  - ZipPlus4
-                  - PostalCode
-                  - City
-                  - State
+                - Address
+                - Neighborhood
+                - Country
+                - ZipPlus4
+                - PostalCode
+                - City
+                - State
               street_line_1:
                 type: string
-                description: The first line of the _street_ part in the structured address.
+                description: The first line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: 100 Syrws St
               street_line_2:
                 type: string
-                description: The second line of the _street_ part in the structured address.
+                description: The second line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: Ste 1
               city:
@@ -2138,7 +2283,8 @@ components:
                 example: WA
               country_code:
                 type: string
-                description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                description: 'The ISO-3166 alpha-2 country code of the address. See:
+                  [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                 format: ISO-3166-2
                 nullable: true
                 example: US
@@ -2160,13 +2306,13 @@ components:
                     description: The accuracy of the geographical location.
                     nullable: true
                     enum:
-                      - Neighborhood
-                      - Country
-                      - PostalCode
-                      - Street
-                      - City
-                      - State
-                      - RoofTop
+                    - Neighborhood
+                    - Country
+                    - PostalCode
+                    - Street
+                    - City
+                    - State
+                    - RoofTop
                 description: The coordinates of the geographical location of the address.
               is_active:
                 type: boolean
@@ -2180,7 +2326,8 @@ components:
                 nullable: true
               link_to_business_end_date:
                 type: string
-                description: The date when the link between the business and the address ended.
+                description: The date when the link between the business and the address
+                  ended.
                 nullable: true
         associated_people:
           type: array
@@ -2235,16 +2382,17 @@ components:
           $ref: '#/components/schemas/Gender'
         type:
           type: string
-          description: |-
-            The type of the legal entity.
+          description: 'The type of the legal entity.
+
 
             * `Person` - The legal entity is a person.
-            * `Business` - The legal entity is a business.
+
+            * `Business` - The legal entity is a business.'
           example: Person
           nullable: true
           enum:
-            - Business
-            - Person
+          - Business
+          - Person
         industry:
           type: string
           description: Not applicable.
@@ -2271,31 +2419,30 @@ components:
                 $ref: '#/components/schemas/PhoneNumber'
               line_type:
                 type: string
-                description: |-
-                  The line type of the phone number.
-
-                  * `Landline` - Traditional wired phone line.
-                  * `Mobile` - Wireless phone line.
-                  * `FixedVOIP` - VOIP number connected to a physical address, such as Vonix or Comcast.
-                  * `NonFixedVOIP` - VOIP number unconnected to a fixed physical address, such as Google Voice or Skype.
-                  * `Premium` - Caller pays a premium for the call–e.g. 976 area code.
-                  * `TollFree` - Callee pays for call.
-                  * `Voicemail` - Voicemail-only service.
-                  * `Other` - Line type is unclear or does not match current categories.
+                description: "The line type of the phone number.\n\n* `Landline` -\
+                  \ Traditional wired phone line.\n* `Mobile` - Wireless phone line.\n\
+                  * `FixedVOIP` - VOIP number connected to a physical address, such\
+                  \ as Vonix or Comcast.\n* `NonFixedVOIP` - VOIP number unconnected\
+                  \ to a fixed physical address, such as Google Voice or Skype.\n\
+                  * `Premium` - Caller pays a premium for the call\u2013e.g. 976 area\
+                  \ code.\n* `TollFree` - Callee pays for call.\n* `Voicemail` - Voicemail-only\
+                  \ service.\n* `Other` - Line type is unclear or does not match current\
+                  \ categories."
                 nullable: true
                 example: NonFixedVOIP
                 enum:
-                  - Landline
-                  - Premium
-                  - NonFixedVOIP
-                  - Mobile
-                  - FixedVOIP
-                  - TollFree
-                  - Other
-                  - Voicemail
+                - Landline
+                - Premium
+                - NonFixedVOIP
+                - Mobile
+                - FixedVOIP
+                - TollFree
+                - Other
+                - Voicemail
         historical_addresses:
           type: array
-          description: Returns a list of unique historical locations associated with the phone.
+          description: Returns a list of unique historical locations associated with
+            the phone.
           items:
             type: object
             properties:
@@ -2310,21 +2457,23 @@ components:
                 description: The type of the location.
                 nullable: true
                 enum:
-                  - Address
-                  - Neighborhood
-                  - Country
-                  - ZipPlus4
-                  - PostalCode
-                  - City
-                  - State
+                - Address
+                - Neighborhood
+                - Country
+                - ZipPlus4
+                - PostalCode
+                - City
+                - State
               street_line_1:
                 type: string
-                description: The first line of the _street_ part in the structured address.
+                description: The first line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: 100 Syrws St
               street_line_2:
                 type: string
-                description: The second line of the _street_ part in the structured address.
+                description: The second line of the _street_ part in the structured
+                  address.
                 nullable: true
                 example: Ste 1
               city:
@@ -2350,7 +2499,8 @@ components:
                 example: WA
               country_code:
                 type: string
-                description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
+                description: 'The ISO-3166 alpha-2 country code of the address. See:
+                  [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm)'
                 format: ISO-3166-2
                 nullable: true
                 example: US
@@ -2372,13 +2522,13 @@ components:
                     description: The accuracy of the geographical location.
                     nullable: true
                     enum:
-                      - Neighborhood
-                      - Country
-                      - PostalCode
-                      - Street
-                      - City
-                      - State
-                      - RoofTop
+                    - Neighborhood
+                    - Country
+                    - PostalCode
+                    - Street
+                    - City
+                    - State
+                    - RoofTop
                 description: The coordinates of the geographical location of the address.
               is_active:
                 type: boolean
@@ -2428,14 +2578,16 @@ components:
     city:
       name: address.city
       in: query
-      description: The name of the city in the structured address. _(Cannot be longer than 500 characters.)_
+      description: The name of the city in the structured address. _(Cannot be longer
+        than 500 characters.)_
       schema:
         type: string
       example: Lynden
     countryCode:
       name: address.country_code
       in: query
-      description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm). _(Cannot be longer than 100 characters.)_'
+      description: 'The ISO-3166 alpha-2 country code of the address. See: [ISO-3166](https://www.nationsonline.org/oneworld/country_code_list.htm).
+        _(Cannot be longer than 100 characters.)_'
       schema:
         type: string
         format: ISO-3166-2
@@ -2451,21 +2603,26 @@ components:
     nameHint:
       name: phone.name_hint
       in: query
-      description: Person or Business name associated with the phone number. If multiple names are associated with the phone in Trestle database, this name will be ranked higher.
+      description: Person or Business name associated with the phone number. If multiple
+        names are associated with the phone in Trestle database, this name will be
+        ranked higher.
       schema:
         type: string
       example: Waidong Syrws
     postalCodeHint:
       name: phone.postal_code_hint
       in: query
-      description: The postal code of the subscriber address associated with the phone number.  If multiple names or addresses are associated with the phone in Trestle database, this postal code hint will be used to rank name/address higher.
+      description: The postal code of the subscriber address associated with the phone
+        number.  If multiple names or addresses are associated with the phone in Trestle
+        database, this postal code hint will be used to rank name/address higher.
       schema:
         type: string
       example: '98264'
     phone:
       name: phone
       in: query
-      description: The phone number in E.164 or local format. The default country calling code is +1 (USA).
+      description: The phone number in E.164 or local format. The default country
+        calling code is +1 (USA).
       schema:
         type: string
       example: '2069735100'
@@ -2473,49 +2630,71 @@ components:
     postalCode:
       name: address.postal_code
       in: query
-      description: The postal code of the structured address. _(Cannot be longer than 100 characters.)_
+      description: The postal code of the structured address. _(Cannot be longer than
+        100 characters.)_
       schema:
         type: string
       example: '98264'
     stateCode:
       name: address.state_code
       in: query
-      description: The state code of the structured address. _(Cannot be longer than 100 characters.)_
+      description: The state code of the structured address. _(Cannot be longer than
+        100 characters.)_
       schema:
         type: string
       example: WA
     streetAddress1:
       name: address.street_line_1
       in: query
-      description: The first line of the _street_ part in the structured address. _(Cannot be longer than 1000 characters.)_
+      description: The first line of the _street_ part in the structured address.
+        _(Cannot be longer than 1000 characters.)_
       schema:
         type: string
       example: 100 Syrws St
     streetAddress2:
       name: address.street_line_2
       in: query
-      description: The second line of the _street_ part in the structured address. _(Cannot be longer than 1000 characters.)_
+      description: The second line of the _street_ part in the structured address.
+        _(Cannot be longer than 1000 characters.)_
       schema:
         type: string
       example: Ste 1
   responses:
     '400':
-      description: |
-        - **Invalid Parameters Error**: Parameter called incorrectly.
-        - **Input Field Error**: Incorrect parameter information, such as non-existent area code on a phone number.
+      description: '- **Invalid Parameters Error**: Parameter called incorrectly.
+
+        - **Input Field Error**: Incorrect parameter information, such as non-existent
+        area code on a phone number.
+
         - **Input Error**: No parameters given.
+
         - **Internal Error**: If there is an internal error while performing the checks
+
+        '
     '401':
-      description: |
-        - **Bad Request**: If ';' used as parameter separator in request. Non-UTF-8-encoded request.
+      description: '- **Bad Request**: If '';'' used as parameter separator in request.
+        Non-UTF-8-encoded request.
+
         - **Not Authorized**: No `api_key` parameter in the request.
+
+        '
     '403':
-      description: |
-        - **Auth Error**: API Key is not authorized for that request or expired.
+      description: '- **Auth Error**: API Key is not authorized for that request or
+        expired.
+
         - **Quota Exceeded Error**: API Key has exceeded its quota.
+
+        '
     '429':
-      description: |
-        **Too Many Requests**: API Key has exceeded its rate limit.
+      description: '**Too Many Requests**: API Key has exceeded its rate limit.
+
+        '
     '500':
-      description: |
-        **Server Unavailable**: API temporarily unavailable.
+      description: '**Server Unavailable**: API temporarily unavailable.
+
+        '
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
