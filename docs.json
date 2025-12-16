@@ -1,25 +1,67 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Trestle Identity APIs",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "favicon": "/favicon.svg",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
-  "openapi": "api/current.yaml",
-
   "navigation": {
     "versions": [
       {
         "version": "Current",
-        "openapi": "api/current.yaml",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "intro",
+              "guides/overview",
+              "guides/authentication",
+              "guides/faq"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference/reverse-phone-api",
+              "api-reference/caller-identification-api",
+              "api-reference/smart-cnam-api",
+              "api-reference/phone-validation-api",
+              "api-reference/reverse-address-api",
+              "api-reference/find-person-api",
+              "api-reference/real-contact-api"
+            ]
+          }
+        ],
         "default": true
       },
       {
         "version": "Archived",
-        "openapi": "api/archived.yaml"
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "intro",
+              "guides/overview",
+              "guides/authentication",
+              "guides/faq"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "api-reference-archived/reverse-phone-api",
+              "api-reference-archived/caller-identification-api",
+              "api-reference-archived/smart-cnam-api",
+              "api-reference-archived/phone-validation-api",
+              "api-reference-archived/reverse-address-api",
+              "api-reference-archived/find-person-api",
+              "api-reference-archived/real-contact-api"
+            ]
+          }
+        ]
       }
     ]
   }
