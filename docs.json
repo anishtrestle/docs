@@ -4,8 +4,8 @@
   "theme": "mint",
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/trestle_logo.svg",
-    "dark": "/trestle_logo.svg",
+    "light": "trestle_logo.png",
+    "dark": "trestle_logo.png",
     "href": "https://trestleiq.com"
   },
   "colors": {
