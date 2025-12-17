@@ -20,25 +20,26 @@ GET https://api.trestleiq.com/3.0/caller_id?phone={phone}
 
 ## Parameters
 
-<ParamField path="phone" body="query" type="string" required>
-  The phone number in E.164 or local format. The default country calling code is +1 (USA). **Example:** `2069735100`
+<ParamField query="phone" type="string" required>
+  The phone number in E.164 or local format. The default country calling code is
+  +1 (USA). **Example:** `2069735100`
 </ParamField>
 
-<ParamField path="phone.country_hint" body="query" type="string">
+<ParamField query="phone.country_hint" type="string">
   The ISO-3166 alpha-2 country code of the phone number. **Example:** `US`
 </ParamField>
 
-<ParamField path="phone.name_hint" body="query" type="string">
+<ParamField query="phone.name_hint" type="string">
   Person or Business name associated with the phone number.
 </ParamField>
 
-<ParamField path="phone.postal_code_hint" body="query" type="string">
+<ParamField query="phone.postal_code_hint" type="string">
   The postal code of the subscriber address associated with the phone number.
 </ParamField>
 
 ## Headers
 
-<ParamField path="x-api-key" body="header" type="string" required>
+<ParamField header="x-api-key" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -51,7 +52,6 @@ curl --request GET \
   --url "https://api.trestleiq.com/3.0/caller_id?phone=2069735100" \
   --header "x-api-key: YOUR_API_KEY"
 ```
-
 
 ```javascript JavaScript
 const response = await fetch(
@@ -82,7 +82,8 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="line_type" type="string">
-  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP, etc.).
+  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP,
+  etc.).
 </ResponseField>
 
 <ResponseField name="carrier" type="string">

@@ -1,16 +1,57 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Trestle Identity APIs",
-  "theme": "aspen",
+  "theme": "mint",
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/trestle_logo.svg",
+    "dark": "/trestle_logo.svg",
+    "href": "https://trestleiq.com"
+  },
   "colors": {
-    "primary": "#4FC3F7",
-    "light": "#F0A840",
+    "primary": "#163545",
+    "light": "#0694B4",
     "dark": "#1E3F51"
   },
   "appearance": {
     "default": "dark",
     "strict": true
+  },
+  "background": {
+    "image": {
+      "light": "/background-light.png",
+      "dark": "/background-dark.png"
+    },
+    "decoration": "gradient",
+    "color": {
+      "light": "#163545",
+      "dark": "#163545"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Inter"
+    },
+    "body": {
+      "family": "Inter"
+    }
+  },
+  "styling": {
+    "codeblocks": {
+      "theme": {
+        "light": "github-light",
+        "dark": "github-dark"
+      }
+    }
+  },
+  "api": {
+    "mdx": {
+      "server": "https://api.trestleiq.com",
+      "auth": {
+        "method": "key",
+        "name": "x-api-key"
+      }
+    }
   },
   "settings": {
     "customScripts": ["/style.css"],
@@ -33,12 +74,48 @@
           {
             "group": "API Reference",
             "pages": [
-              "api-reference/reverse-phone-api",
-              "api-reference/caller-identification-api",
-              "api-reference/smart-cnam-api",
-              "api-reference/phone-validation-api",
-              "api-reference/reverse-address-api",
-              "api-reference/real-contact-api"
+              {
+                "group": "Reverse Phone API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/reverse-phone-api"
+                ]
+              },
+              {
+                "group": "Caller Identification API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/caller-identification-api"
+                ]
+              },
+              {
+                "group": "Smart CNAM API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/smart-cnam-api"
+                ]
+              },
+              {
+                "group": "Phone Validation API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/phone-validation-api"
+                ]
+              },
+              {
+                "group": "Reverse Address API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/reverse-address-api"
+                ]
+              },
+              {
+                "group": "Real Contact API",
+                "expanded": false,
+                "pages": [
+                  "api-reference/real-contact-api"
+                ]
+              }
             ]
           }
         ],
@@ -59,13 +136,55 @@
           {
             "group": "API Reference",
             "pages": [
-              "api-reference-archived/reverse-phone-api",
-              "api-reference-archived/caller-identification-api",
-              "api-reference-archived/smart-cnam-api",
-              "api-reference-archived/phone-validation-api",
-              "api-reference-archived/reverse-address-api",
-              "api-reference-archived/find-person-api",
-              "api-reference-archived/real-contact-api"
+              {
+                "group": "Reverse Phone API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/reverse-phone-api"
+                ]
+              },
+              {
+                "group": "Caller Identification API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/caller-identification-api"
+                ]
+              },
+              {
+                "group": "Smart CNAM API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/smart-cnam-api"
+                ]
+              },
+              {
+                "group": "Phone Validation API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/phone-validation-api"
+                ]
+              },
+              {
+                "group": "Reverse Address API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/reverse-address-api"
+                ]
+              },
+              {
+                "group": "Find Person API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/find-person-api"
+                ]
+              },
+              {
+                "group": "Real Contact API",
+                "expanded": false,
+                "pages": [
+                  "api-reference-archived/real-contact-api"
+                ]
+              }
             ]
           }
         ]

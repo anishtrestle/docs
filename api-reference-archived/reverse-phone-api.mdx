@@ -5,7 +5,8 @@ api: "GET /3.1/phone"
 ---
 
 <Warning>
-This is an archived version of the API. Please use the [Current Reverse Phone API](/api-reference/reverse-phone-api) for new integrations.
+  This is an archived version of the API. Please use the [Current Reverse Phone
+  API](/api-reference/reverse-phone-api) for new integrations.
 </Warning>
 
 ## Overview
@@ -26,33 +27,29 @@ GET https://api.trestleiq.com/3.1/phone?phone={phone}
 
 ## Parameters
 
-<ParamField body="query" path="phone" type="string" required>
-  The phone number in E.164 or local format. The default country calling code is +1 (USA).
-  
-  **Example:** `2069735100`
+<ParamField query="phone" type="string" required>
+  The phone number in E.164 or local format. The default country calling code is
+  +1 (USA). **Example:** `2069735100`
 </ParamField>
 
-<ParamField body="query" path="phone.country_hint" type="string">
-  The ISO-3166 alpha-2 country code of the phone number.
-  
-  **Example:** `US`
+<ParamField query="phone.country_hint" type="string">
+  The ISO-3166 alpha-2 country code of the phone number. **Example:** `US`
 </ParamField>
 
-<ParamField body="query" path="phone.name_hint" type="string">
-  Person or Business name associated with the phone number. If multiple names are associated with the phone in Trestle database, this name will be ranked higher.
-  
-  **Example:** `John Doe`
+<ParamField query="phone.name_hint" type="string">
+  Person or Business name associated with the phone number. If multiple names
+  are associated with the phone in Trestle database, this name will be ranked
+  higher. **Example:** `John Doe`
 </ParamField>
 
-<ParamField body="query" path="phone.postal_code_hint" type="string">
+<ParamField query="phone.postal_code_hint" type="string">
   The postal code of the subscriber address associated with the phone number.
-  
   **Example:** `98264`
 </ParamField>
 
 ## Headers
 
-<ParamField body="header" path="x-api-key" type="string" required>
+<ParamField header="x-api-key" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -114,7 +111,8 @@ data = response.json()
 </ResponseField>
 
 <ResponseField name="line_type" type="string">
-  The line type of the phone number. Possible values: Landline, Mobile, FixedVOIP, NonFixedVOIP, Premium, TollFree, Voicemail, Other.
+  The line type of the phone number. Possible values: Landline, Mobile,
+  FixedVOIP, NonFixedVOIP, Premium, TollFree, Voicemail, Other.
 </ResponseField>
 
 <ResponseField name="carrier" type="string">

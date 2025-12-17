@@ -5,7 +5,8 @@ api: "GET /3.1/person"
 ---
 
 <Warning>
-This is an archived version of the API. Please use the [Current Find Person API](/api-reference/find-person-api) for new integrations.
+  This is an archived version of the API. Please use the [Current Find Person
+  API](/api-reference/find-person-api) for new integrations.
 </Warning>
 
 ## Overview
@@ -26,37 +27,37 @@ GET https://api.trestleiq.com/3.1/person?name={name}&address.city={city}&address
 
 ## Parameters
 
-<ParamField body="query" path="name" type="string" required>
+<ParamField query="name" type="string" required>
   The name of the person to search. **Example:** `John Doe`
 </ParamField>
 
-<ParamField body="query" path="address.street_line_1" type="string">
+<ParamField query="address.street_line_1" type="string">
   The first line of the street part in the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.street_line_2" type="string">
+<ParamField query="address.street_line_2" type="string">
   The second line of the street part in the structured address.
 </ParamField>
 
-<ParamField body="query" path="address.city" type="string">
+<ParamField query="address.city" type="string">
   The name of the city in the structured address. **Example:** `Seattle`
 </ParamField>
 
-<ParamField body="query" path="address.postal_code" type="string">
+<ParamField query="address.postal_code" type="string">
   The postal code of the structured address. **Example:** `98101`
 </ParamField>
 
-<ParamField body="query" path="address.state_code" type="string">
+<ParamField query="address.state_code" type="string">
   The state code of the structured address. **Example:** `WA`
 </ParamField>
 
-<ParamField body="query" path="address.country_code" type="string">
+<ParamField query="address.country_code" type="string">
   The ISO-3166 alpha-2 country code of the address. **Example:** `US`
 </ParamField>
 
 ## Headers
 
-<ParamField body="header" path="x-api-key" type="string" required>
+<ParamField header="x-api-key" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -91,7 +92,9 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="person" type="array">
-  An array of people associated with the address provided. Each person object includes: - Demographics - All current and historical addresses - Phone numbers - Relatives and associates
+  An array of people associated with the address provided. Each person object
+  includes: - Demographics - All current and historical addresses - Phone
+  numbers - Relatives and associates
 </ResponseField>
 
 <ResponseField name="error" type="object">
@@ -99,5 +102,7 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="warnings" type="array">
-  Warnings returned as part of the response. Possible values include: `Missing Input`, `Invalid Input Address`, `Invalid house/building number`, `Missing unit/apt/suite number`, or `Invalid unit/apt/suite number`.
+  Warnings returned as part of the response. Possible values include: `Missing
+  Input`, `Invalid Input Address`, `Invalid house/building number`, `Missing
+  unit/apt/suite number`, or `Invalid unit/apt/suite number`.
 </ResponseField>

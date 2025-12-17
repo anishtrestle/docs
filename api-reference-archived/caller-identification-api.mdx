@@ -5,7 +5,9 @@ api: "GET /3.0/caller_id"
 ---
 
 <Warning>
-This is an archived version of the API. Please use the [Current Caller Identification API](/api-reference/caller-identification-api) for new integrations.
+  This is an archived version of the API. Please use the [Current Caller
+  Identification API](/api-reference/caller-identification-api) for new
+  integrations.
 </Warning>
 
 ## Overview
@@ -26,25 +28,26 @@ GET https://api.trestleiq.com/3.0/caller_id?phone={phone}
 
 ## Parameters
 
-<ParamField body="query" path="phone" type="string" required>
-  The phone number in E.164 or local format. The default country calling code is +1 (USA). **Example:** `2069735100`
+<ParamField query="phone" type="string" required>
+  The phone number in E.164 or local format. The default country calling code is
+  +1 (USA). **Example:** `2069735100`
 </ParamField>
 
-<ParamField body="query" path="phone.country_hint" type="string">
+<ParamField query="phone.country_hint" type="string">
   The ISO-3166 alpha-2 country code of the phone number. **Example:** `US`
 </ParamField>
 
-<ParamField body="query" path="phone.name_hint" type="string">
+<ParamField query="phone.name_hint" type="string">
   Person or Business name associated with the phone number.
 </ParamField>
 
-<ParamField body="query" path="phone.postal_code_hint" type="string">
+<ParamField query="phone.postal_code_hint" type="string">
   The postal code of the subscriber address associated with the phone number.
 </ParamField>
 
 ## Headers
 
-<ParamField body="header" path="x-api-key" type="string" required>
+<ParamField header="x-api-key" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -87,7 +90,8 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="line_type" type="string">
-  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP, etc.).
+  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP,
+  etc.).
 </ResponseField>
 
 <ResponseField name="carrier" type="string">

@@ -5,7 +5,8 @@ api: "GET /3.0/phone_intel"
 ---
 
 <Warning>
-This is an archived version of the API. Please use the [Current Phone Validation API](/api-reference/phone-validation-api) for new integrations.
+  This is an archived version of the API. Please use the [Current Phone
+  Validation API](/api-reference/phone-validation-api) for new integrations.
 </Warning>
 
 ## Overview
@@ -26,17 +27,17 @@ GET https://api.trestleiq.com/3.0/phone_intel?phone={phone}
 
 ## Parameters
 
-<ParamField body="query" path="phone" type="string" required>
+<ParamField query="phone" type="string" required>
   The phone number in E.164 or local format. **Example:** `2069735100`
 </ParamField>
 
-<ParamField body="query" path="phone.country_hint" type="string">
+<ParamField query="phone.country_hint" type="string">
   The ISO-3166 alpha-2 country code of the phone number. **Example:** `US`
 </ParamField>
 
 ## Headers
 
-<ParamField body="header" path="x-api-key" type="string" required>
+<ParamField header="x-api-key" type="string" required>
   Your API key for authentication.
 </ParamField>
 
@@ -79,11 +80,17 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="activity_score" type="integer">
-  Trestle's activity scores range from 0 to 100. A score of 100 means consistent activity in the last 12 months, and a score of 0 means a disconnected number or no activity has been seen in the past year. - **70 or above**: High confidence that the phone is connected and active - **30 or below**: High confidence that the phone is disconnected or inactive - **50**: Not enough signals to predict connection status
+  Trestle's activity scores range from 0 to 100. A score of 100 means consistent
+  activity in the last 12 months, and a score of 0 means a disconnected number
+  or no activity has been seen in the past year. - **70 or above**: High
+  confidence that the phone is connected and active - **30 or below**: High
+  confidence that the phone is disconnected or inactive - **50**: Not enough
+  signals to predict connection status
 </ResponseField>
 
 <ResponseField name="line_type" type="string">
-  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP, etc.).
+  The line type of the phone number (Landline, Mobile, FixedVOIP, NonFixedVOIP,
+  etc.).
 </ResponseField>
 
 <ResponseField name="carrier" type="string">
