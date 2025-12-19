@@ -21,16 +21,24 @@ GET https://api.trestleiq.com/3.2/phone?phone={phone}
 ## Request
 
 <Accordion title="Query Parameters" defaultOpen>
-  <ParamField query="phone - query" path="phone - path" body="phone - body" header="phone - header" default="phone - default" type="string" required="false" placeholder="placeholder">
-    
+  <ParamField query="phone" header="phone - header" default="phone - default" type="string" required>
+    The phone number in E.164 or local format. The default country calling code is +1 (USA). 
+
+    Example: `phone=2069735100 `
+  </ParamField>
+  <ParamField query="phone.country_hint" type="string">
+    Enter a description
+  </ParamField>
+  <ParamField query="phone.name_hint" type="string">
+    Enter a description
+  </ParamField>
+  <ParamField query="phone.postal_code_hint" type="string">
+    Enter a description
+  </ParamField>
+  <ParamField header="x-api-key" type="string">
+    Enter a description
   </ParamField>
 </Accordion>
-
-<ParamField type="string" required="false">
-  The phone number in E.164 or local format. The default country calling code is +1 (USA).
-
-  Example: phone=2069735100
-</ParamField>
 
 <ParamField query="phone.country_hint" type="string">
   The ISO-3166 alpha-2 country code of the phone number. **Example:**
