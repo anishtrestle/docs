@@ -55,10 +55,8 @@
           {
             "group": "Get Started",
             "pages": [
-              "intro",
               "guides/overview",
-              "guides/authentication",
-              "guides/faq"
+              "guides/authentication"
             ]
           },
           {
