@@ -21,33 +21,27 @@ GET https://api.trestleiq.com/3.0/location?address.street_line_1={street}&addres
 ## Parameters
 
 <ParamField query="address.street_line_1" type="string">
-  The first line of the street part in the structured address. Cannot be longer
-  than 1000 characters. **Example:** `100 Main St`
+  The first line of the street part in the structured address. Cannot be longer than 1000 characters. **Example:** `100 Main St`
 </ParamField>
 
 <ParamField query="address.street_line_2" type="string">
-  The second line of the street part in the structured address. Cannot be longer
-  than 1000 characters. **Example:** `Ste 1`
+  The second line of the street part in the structured address. Cannot be longer than 1000 characters. **Example:** `Ste 1`
 </ParamField>
 
 <ParamField query="address.city" type="string">
-  The name of the city in the structured address. Cannot be longer than 500
-  characters. **Example:** `Seattle`
+  The name of the city in the structured address. Cannot be longer than 500 characters. **Example:** `Seattle`
 </ParamField>
 
 <ParamField query="address.state_code" type="string">
-  The state code of the structured address. Cannot be longer than 100
-  characters. **Example:** `WA`
+  The state code of the structured address. Cannot be longer than 100 characters. **Example:** `WA`
 </ParamField>
 
 <ParamField query="address.postal_code" type="string">
-  The postal code of the structured address. Cannot be longer than 100
-  characters. **Example:** `98101`
+  The postal code of the structured address. Cannot be longer than 100 characters. **Example:** `98101`
 </ParamField>
 
 <ParamField query="address.country_code" type="string">
-  The ISO-3166 alpha-2 country code of the address. Cannot be longer than 100
-  characters. **Example:** `US`
+  The ISO-3166 alpha-2 country code of the address. Cannot be longer than 100 characters. **Example:** `US`
 </ParamField>
 
 ## Headers
@@ -65,6 +59,7 @@ curl --request GET \
   --url "https://api.trestleiq.com/3.0/location?address.street_line_1=100%20Main%20St&address.city=Seattle&address.state_code=WA&address.postal_code=98101" \
   --header "x-api-key: YOUR_API_KEY"
 ```
+
 
 ```javascript JavaScript
 const response = await fetch(
