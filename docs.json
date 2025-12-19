@@ -4,8 +4,8 @@
   "theme": "mint",
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "trestle_logo.png",
-    "dark": "trestle_logo.png",
+    "light": "/assets/trestle_logo.png",
+    "dark": "/assets/trestle_logo.png",
     "href": "https://trestleiq.com"
   },
   "colors": {
@@ -14,19 +14,8 @@
     "dark": "#1E3F51"
   },
   "appearance": {
-    "default": "dark",
-    "strict": true
-  },
-  "background": {
-    "image": {
-      "light": "/background-light.png",
-      "dark": "/background-dark.png"
-    },
-    "decoration": "gradient",
-    "color": {
-      "light": "#163545",
-      "dark": "#163545"
-    }
+    "default": "system",
+    "strict": false
   },
   "fonts": {
     "heading": {
@@ -54,8 +43,9 @@
     }
   },
   "settings": {
-    "customScripts": ["/style.css"],
-    "customStyles": ["/style.css"]
+    "customStyles": [
+      "/style.css"
+    ]
   },
   "navigation": {
     "versions": [

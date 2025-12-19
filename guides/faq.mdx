@@ -57,21 +57,18 @@ Rate limits vary by API and plan. Check your Developer Portal dashboard for your
     - **Internal Error**: If there is an internal error while performing the checks
   </Accordion>
 
-{" "}
-<Accordion title="401 Unauthorized">
+  <Accordion title="401 Unauthorized">
   - **Bad Request**: If ';' used as parameter separator in request.
   Non-UTF-8-encoded request. - **Not Authorized**: No `x-api-key` header in the
   request.
-</Accordion>
+  </Accordion>
 
-{" "}
-<Accordion title="403 Forbidden">
+  <Accordion title="403 Forbidden">
   - **Auth Error**: API Key is not authorized for that request or expired. -
   **Quota Exceeded Error**: API Key has exceeded its quota.
-</Accordion>
+  </Accordion>
 
-{" "}
-<Accordion title="429 Too Many Requests">
+  <Accordion title="429 Too Many Requests">
   API Key has exceeded its rate limit.
 </Accordion>
 
