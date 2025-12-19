@@ -45,6 +45,7 @@ curl --request GET \
   --header "Accept: application/json"
 ```
 
+
 ```javascript JavaScript
 const response = await fetch(
   "https://api.trestleiq.com/3.1/cnam?phone=2069735100&phone.country_hint=US",
@@ -79,7 +80,6 @@ const data = await response.json();
 </ResponseField>
 
 <ResponseField name="warnings" type="array">
-  Warnings returned as part of the response, if applicable. Possible values
-  include: `Invalid Input`, `International number. Not authorized`, or `Missing
-  Input`.
+  Warnings returned as part of the response, if applicable. Possible values include: `Invalid Input`, `International number. Not authorized`, or `Missing
+    Input`.
 </ResponseField>

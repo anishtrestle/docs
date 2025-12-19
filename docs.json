@@ -55,8 +55,7 @@
           {
             "group": "Get Started",
             "pages": [
-              "guides/overview",
-              "guides/authentication"
+              "guides/overview"
             ]
           },
           {

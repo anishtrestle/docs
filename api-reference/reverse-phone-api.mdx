@@ -6,7 +6,7 @@ api: "GET /3.2/phone"
 
 ## Overview
 
-Reverse Phone API validates a phone number and provides phone metadata, owner name and demographics, current and historical addresses, relatives and associated people, and additional phone numbers.
+Reverse Phone API offers comprehensive verification and enrichment of phone numbers. It includes phone validity, line type, carrier data, and all owners associated with the phone and their details, like demographics, current addresses, alternate phones, and email addresses.
 
 ## Endpoint
 
@@ -18,14 +18,22 @@ GET https://api.trestleiq.com/3.2/phone?phone={phone}
 
 </RequestExample>
 
-## Parameters
+## Request
 
-<ParamField query="phone" type="string" required>
-  The phone number in E.164 or local format. The default country calling code is +1 (USA). **Example:** `2069735100`
+<Accordion title="Query Parameters" defaultOpen>
+  <ParamField query="phone - query" path="phone - path" body="phone - body" header="phone - header" default="phone - default" type="string" required="false" placeholder="placeholder">
+    
+  </ParamField>
+</Accordion>
+
+<ParamField type="string" required="false">
+  The phone number in E.164 or local format. The default country calling code is +1 (USA).
+
+  Example: phone=2069735100
 </ParamField>
 
 <ParamField query="phone.country_hint" type="string">
-  The ISO-3166 alpha-2 country code of the phone number. **Example:** `US`
+  The ISO-3166 alpha-2 country code of the phone number. **Example:**
 </ParamField>
 
 <ParamField query="phone.name_hint" type="string">
